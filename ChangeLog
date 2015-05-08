@@ -1,0 +1,6 @@
+2015-05-08  Enrico Schumann  <es@enricoschumann.net>
+
+	* DESCRIPTION (Version): Version: 0.0-1
+
+	* R/functions.R: initial version
+

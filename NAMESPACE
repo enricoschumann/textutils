@@ -1,13 +1,15 @@
 ## exportPattern("^[[:alpha:]]+")
 export(
-    char2num,
     TeXunits,
+    char2num,
     expstr,
     rmrp,
     rmspace,
     strexp,
-    toText,
     toHTML,
+    toText,
+    trim,
+
     valign
 )
 S3method(toText, default)

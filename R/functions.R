@@ -1,5 +1,5 @@
 ## -*- truncate-lines: t; -*-
-## Time-stamp: <2015-05-07 16:51:32 CEST (es)>
+## Time-stamp: <2015-05-08 16:22:06 CEST (es)>
 
 ##
 toText <- function(x, ...) 
@@ -19,6 +19,31 @@ rmspace <- function(s, leading = TRUE, trailing = TRUE) {
         s <- gsub("\\s*$", "", s)
     s
 }
+
+trim <- function(s, leading = TRUE, trailing = TRUE, perl = TRUE, ...) {
+    if (leading && trailing)
+        gsub("^\\s+|\\s+$", "", s, perl = perl, ...)
+    else if (leading)
+        gsub("^\\s+", "", s, perl = perl, ...)
+    else
+        gsub("\\s+$", "", s, perl = perl, ...)
+}
+
+s <- c("abc", "   abc", "abc   ", "  abc  ", "a b c")
+s <- c(s,s,s,s,s,s,s)
+require("rbenchmark")
+benchmark(gsub("^\\s\\s*|\\s*\\s$", "", s),
+          gsub("^\\s+|\\s+$", "", s),
+          gsub("^\\s*|\\s*$", "", s),
+          gsub("^\\s*|\\s*$", "", s, perl = TRUE),
+          gsub("^\\s\\s*|\\s*\\s$", "", s, perl = TRUE),
+          gsub("^\\s+|\\s+$", "", s, perl = TRUE),
+          rmspace(s),
+          trim(s),
+          replications = 10000, columns = c("test", "elapsed", "relative"),
+          order = "relative")
+
+
 
 ## takes a string like "12.000,23" and returns 12000.23
 char2num <- function(s, dec = ",", big.mark = ".") {
