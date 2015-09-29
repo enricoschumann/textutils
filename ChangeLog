@@ -1,3 +1,18 @@
+2015-08-18  Enrico Schumann  <es@enricoschumann.net>
+
+	* DESCRIPTION (Version): Version: 0.0-3
+
+	* R/functions.R (toText.default): 'toText.default' now attaches
+	'text' class
+
+	* R/functions.R (print.text): new method
+
+2015-07-01  Enrico Schumann  <es@enricoschumann.net>
+
+	* DESCRIPTION (Version): Version: 0.0-2
+
+	* R/functions.R (trim): removed/commented benchmark code
+
 2015-05-08  Enrico Schumann  <es@enricoschumann.net>
 
 	* DESCRIPTION (Version): Version: 0.0-1

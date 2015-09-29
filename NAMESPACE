@@ -9,7 +9,7 @@ export(
     toHTML,
     toText,
     trim,
-
     valign
 )
 S3method(toText, default)
+S3method(print, text)

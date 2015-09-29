@@ -1,8 +1,8 @@
 Package: textutils
 Type: Package
 Title: Utilities for Handling Strings and Text
-Version: 0.0-1
-Date: 2015-05-08
+Version: 0.0-3
+Date: 2015-08-18
 Author: Enrico Schumann
 Maintainer: Enrico Schumann <es@enricoschumann.net>
 Description: Utilities for handling character vectors.

@@ -1,15 +1,20 @@
 ## -*- truncate-lines: t; -*-
-## Time-stamp: <2015-05-08 16:22:06 CEST (es)>
 
 ##
 toText <- function(x, ...) 
     UseMethod("toText")
 
-toText.default <- function(x, ...) 
-    capture.output(write(as.character(x), ""))
-
+toText.default <- function(x, ...) {
+    ans <- capture.output(write(as.character(x), ""))
+    class(ans) <- "text"
+    ans
+}
+    
 toHTML <- function(x, ...)
     UseMethod("toHTML")
+
+print.text <- function(x, ...)
+    cat(x, sep = "\n", ...)
 
 ## remove space at beginning or end of string
 rmspace <- function(s, leading = TRUE, trailing = TRUE) {
@@ -29,21 +34,19 @@ trim <- function(s, leading = TRUE, trailing = TRUE, perl = TRUE, ...) {
         gsub("\\s+$", "", s, perl = perl, ...)
 }
 
-s <- c("abc", "   abc", "abc   ", "  abc  ", "a b c")
-s <- c(s,s,s,s,s,s,s)
-require("rbenchmark")
-benchmark(gsub("^\\s\\s*|\\s*\\s$", "", s),
-          gsub("^\\s+|\\s+$", "", s),
-          gsub("^\\s*|\\s*$", "", s),
-          gsub("^\\s*|\\s*$", "", s, perl = TRUE),
-          gsub("^\\s\\s*|\\s*\\s$", "", s, perl = TRUE),
-          gsub("^\\s+|\\s+$", "", s, perl = TRUE),
-          rmspace(s),
-          trim(s),
-          replications = 10000, columns = c("test", "elapsed", "relative"),
-          order = "relative")
-
-
+## s <- c("abc", "   abc", "abc   ", "  abc  ", "a b c")
+## s <- c(s,s,s,s,s,s,s)
+## require("rbenchmark")
+## benchmark(gsub("^\\s\\s*|\\s*\\s$", "", s),
+##           gsub("^\\s+|\\s+$", "", s),
+##           gsub("^\\s*|\\s*$", "", s),
+##           gsub("^\\s*|\\s*$", "", s, perl = TRUE),
+##           gsub("^\\s\\s*|\\s*\\s$", "", s, perl = TRUE),
+##           gsub("^\\s+|\\s+$", "", s, perl = TRUE),
+##           rmspace(s),
+##           trim(s),
+##           replications = 10000, columns = c("test", "elapsed", "relative"),
+##           order = "relative")
 
 ## takes a string like "12.000,23" and returns 12000.23
 char2num <- function(s, dec = ",", big.mark = ".") {
@@ -51,8 +54,12 @@ char2num <- function(s, dec = ",", big.mark = ".") {
     as.numeric(sub(dec, ".", s, fixed = TRUE))
 }
 
+## TeXBook, p. 57
 .TeXunit.table <- c("cm" = 1864680,
-                    "in" = 4736287)
+                    "in" = 4736287,
+                    "pt" = 65536,
+                    "pc" = 786432
+                    )
 
 ## remove repeated pattern
 rmrp <- function(s, pattern, ...) {
