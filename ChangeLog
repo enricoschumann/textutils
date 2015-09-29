@@ -1,8 +1,10 @@
 2015-09-29  Enrico Schumann  <es@enricoschumann.net>
 
-        * DESCRIPTION (Version): 0.0-4
+	* man/valign.Rd: added man page
 
 2015-09-29  Enrico Schumann  <es@enricoschumann.net>
+
+        * DESCRIPTION (Version): 0.0-4
 
 	* man/trim.Rd: new help page for 'trim'
 
