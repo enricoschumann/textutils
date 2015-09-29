@@ -1,7 +1,5 @@
 \name{TextTools}
 \alias{TextTools}
-\alias{rmspace}
-\alias{trim}
 \alias{char2num}
 \alias{expstr}
 \alias{strexp}
@@ -14,8 +12,6 @@
   numerical vectors.
 }
 \usage{
-rmspace(s, leading = TRUE, trailing = TRUE)
-trim(s, leading = TRUE, trailing = TRUE)
 char2num(s, dec = ",", big.mark = ".")
 expstr(s, after, width, fill = " ", at) ## please use strexp
 strexp(s, after, width, fill = " ", at)
@@ -23,8 +19,6 @@ rmrp(s, pattern, \dots)
 }
 \arguments{
   \item{s}{a character vector}
-  \item{leading}{logical}
-  \item{trailing}{logical}
   \item{dec}{
     character: the decimal point; will be replaced with \dQuote{\code{.}} 
   }

@@ -18,6 +18,9 @@ print.text <- function(x, ...)
 
 ## remove space at beginning or end of string
 rmspace <- function(s, leading = TRUE, trailing = TRUE) {
+    .Deprecated("trim", "textutils",
+                paste0(sQuote("rmspace"), " is deprecated. Use ",
+                       sQuote("trim"), " instead.", collapse = ""))
     if (leading)
         s <- gsub("^\\s*", "", s)
     if (trailing)

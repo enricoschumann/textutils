@@ -1,3 +1,13 @@
+2015-09-29  Enrico Schumann  <es@enricoschumann.net>
+
+        * DESCRIPTION (Version): 0.0-4
+
+2015-09-29  Enrico Schumann  <es@enricoschumann.net>
+
+	* man/trim.Rd: new help page for 'trim'
+
+	* R/functions.R (rmspace): added call to '.Deprecated'.
+
 2015-08-18  Enrico Schumann  <es@enricoschumann.net>
 
 	* DESCRIPTION (Version): Version: 0.0-3
