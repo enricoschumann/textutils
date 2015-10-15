@@ -1,5 +1,9 @@
 2015-10-15  Enrico Schumann  <es@enricoschumann.net>
 
+        * DESCRIPTION (Version): 0.0-5
+
+2015-10-15  Enrico Schumann  <es@enricoschumann.net>
+
 	* R/functions.R (char2num): the function now uses
 	'Sys.localeconv()[["decimal_point"]]' as the decimal separator;
 	but see the caveats at ?Sys.localeconv
