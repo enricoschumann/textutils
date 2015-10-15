@@ -35,6 +35,6 @@ Enrico Schumann
 \seealso{
   \code{\link{toLatex}}
 }
-\examples{
-
-}
+%% \examples{
+%% ## see returns in package
+%% }
