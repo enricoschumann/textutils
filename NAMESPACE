@@ -2,7 +2,6 @@
 export(
     ## TeXunits,
     char2num,
-    expstr,
     rmrp,
     rmspace,
     strexp,

@@ -1,3 +1,17 @@
+2015-10-15  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (char2num): the function now uses
+	'Sys.localeconv()[["decimal_point"]]' as the decimal separator;
+	but see the caveats at ?Sys.localeconv
+
+	* NAMESPACE: 'expstr' is no longer exported (use 'strexp' instead)
+
+	* man/rmrp.Rd: added man page
+
+	* man/strexp.Rd: added man page
+
+	* man/char2num.Rd: added man page
+
 2015-09-29  Enrico Schumann  <es@enricoschumann.net>
 
 	* man/valign.Rd: added man page

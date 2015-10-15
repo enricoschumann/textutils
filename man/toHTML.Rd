@@ -18,10 +18,13 @@ toHTML(x, ...)
 }
 }
 \details{
-There exists several toHTML methods.
+
+  There exists \code{toHTML} methods in several packages: in
+  \pkg{tools}, \pkg{XML}. \pkg{R2HTML} has a \code{HTML} generic.
+  
 }
 \value{
-A character vector.
+  A character vector.
 }
 \author{
 Enrico Schumann
@@ -33,5 +36,5 @@ Enrico Schumann
   \code{\link{toLatex}}
 }
 \examples{
-1+1
+
 }

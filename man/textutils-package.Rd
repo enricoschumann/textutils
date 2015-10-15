@@ -9,7 +9,12 @@
 \packageDescription{textutils}
 }
 \details{
-Functions
+  The package comprises a number of functions that help with
+  manipulating character strings.
+
+  For more information and a complete list of functions, use
+      \sQuote{\code{library(help = "textutils")}}.
+  
 }
 \author{
 \packageAuthor{textutils}
@@ -17,9 +22,3 @@ Functions
 Maintainer: \packageMaintainer{textutils}
 }
 \keyword{ package }
-%% \seealso{
-
-%% }
-%% \examples{
-%% ~~ simple examples of the most important functions ~~
-%% }

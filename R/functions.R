@@ -13,6 +13,11 @@ toText.default <- function(x, ...) {
 toHTML <- function(x, ...)
     UseMethod("toHTML")
 
+toHTML.default <- function(x, ...){
+    ans <- capture.output(write(as.character(x), ""))
+    c("<pre>", ans, "</pre>")
+}
+
 print.text <- function(x, ...)
     cat(x, sep = "\n", ...)
 
@@ -54,7 +59,7 @@ trim <- function(s, leading = TRUE, trailing = TRUE, perl = TRUE, ...) {
 ## takes a string like "12.000,23" and returns 12000.23
 char2num <- function(s, dec = ",", big.mark = ".") {
     s <- gsub(big.mark, "", s, fixed = TRUE)
-    as.numeric(sub(dec, ".", s, fixed = TRUE))
+    as.numeric(sub(dec, Sys.localeconv()[["decimal_point"]], s, fixed = TRUE))
 }
 
 ## TeXBook, p. 57
@@ -102,6 +107,9 @@ TeXunits <- function(from, to, from.unit = NULL) {
 
 ## expand string to given width
 expstr <- function(s, after, width, fill = " ", at) {
+    .Deprecated("strexp", "textutils",
+                paste0(sQuote("expstr"), " is deprecated. Use ",
+                       sQuote("strexp"), " instead.", collapse = ""))
     ns <- nchar(s)
     space <- character(length(s))
     for (i in seq_along(space))
@@ -173,8 +181,6 @@ valign <- function(s, align = "|", insert.at = "<>", replace = TRUE, fixed = TRU
 ## TeXunits(c("1 cm", "0.7 in"), c("in", "cm"))
 ## TeXunits(c("1 cm", "0.7 in"), "in")
 ## TeXunits("1 cm", c("in", "cm"))
-
-
 
 ## align
 ## character vector, pattern, at
