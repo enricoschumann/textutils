@@ -13,33 +13,35 @@ toText(x, ...)
 \method{toText}{default}(x, \dots)
 
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
     an object
-}
+  }
   \item{\dots}{
-     arguments passed to methods
-}
+    arguments passed to methods
+  }
 }
 \details{
-
-     A generic function.  Method are expected to coerce a given object
-     to lines of text that can be used, for instance, for reports.
-     (Thus, the purpose of toText is not to store data in a form that
-     can be read and understood by R; for that, see \code{\link{dput}}
-     or \code{\link{dump}}.
-     
-     There is no restriction on encoding, so plain text does not
-     necessarily mean \acronym{ascii}.  But current methods do not map
-     into markup-representations.
+  
+  A generic function. Method are expected to coerce a given object to
+  lines of human-readable text that can be used, for instance, for
+  reports. (The purpose of \code{toText} is not to store data in a form
+  that can be read and understood by R; for that, see \code{\link{dput}}
+  or \code{\link{dump}}.
+  
+  The \code{print} method is essentially equivalent to \code{cat(x, sep
+    = "\n")} .
+  
+  There is no restriction on encoding, so plain text does not
+  necessarily mean \acronym{ascii}.  But current methods do not map into
+  markup-representations.
 
 }
 \value{
-  a character vector (lines of text)
-}
-\references{
-  Enrico Schumann -- Portfolio Management with R
+
+  A character vector (lines of text), possibly with a class attribute
+  \code{text} (even though that is not used currently).
+
 }
 \author{
   Enrico Schumann

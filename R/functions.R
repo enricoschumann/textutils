@@ -18,6 +18,11 @@ toHTML.default <- function(x, ...){
     c("<pre>", ans, "</pre>")
 }
 
+toHTML.text <- function(x, ...){
+    ans <- capture.output(write(as.character(x), ""))
+    c("<pre>", ans, "</pre>")
+}
+
 print.text <- function(x, ...)
     cat(x, sep = "\n", ...)
 
@@ -200,3 +205,34 @@ valign <- function(s, align = "|", insert.at = "<>", replace = TRUE, fixed = TRU
 ##        "in % <>1.1|")
 ## cat(s, sep = "\n")
 ## cat(valign(s), sep = "\n")
+
+## x <- c(1,1,1)
+## y <- c(.1,.1,.1)
+
+latexrule <- function(x, y, col = NULL,
+                     x.unit= "cm", y.unit = "cm", noindent = FALSE) {
+    if (any(!grepl("[[:alpha:]]", x)))
+        x <- paste0(x, x.unit)
+    if (any(!grepl("[[:alpha:]]", y)))
+        y <- paste0(y, y.unit)
+
+    res <- paste("\\rule{", x, "}{", y, "}")
+    if (!is.null(col))
+        res <- paste0("{\\color{", col, "}", res, "}")
+    res <- paste(res, collapse = "%\n")
+    res
+}
+
+btable <- function(x, unit = "cm", before = "", after = "",
+                   raise = "0.2ex", height = "1ex",...) {
+
+    if (any(!grepl("[[:alpha:]]", x)))
+        x <- paste0(x, unit)
+    paste0(before,
+           "\\raisebox{", raise, "}{\\rule{",x,"}{",height,"}}",
+           after)
+}
+## \begin{tabular}{rrl}
+## Dez 2001 & 1,0000 & \raisebox{0.1ex}{\rule{1.0000cm}{0.7ex}} \\
+## Jan 2001 & 1,0210 & \raisebox{0.1ex}{\rule{1.0210cm}{0.7ex}}                                  \\
+## \end{tabular}

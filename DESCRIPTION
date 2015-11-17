@@ -5,5 +5,7 @@ Version: 0.0-5
 Date: 2015-10-15
 Author: Enrico Schumann
 Maintainer: Enrico Schumann <es@enricoschumann.net>
-Description: Utilities for handling character vectors.
+Description: Utilities for handling character vectors that store text
+  in the sense of readable text (either plain or with markup, such as
+  HTML).
 License: GPL-3

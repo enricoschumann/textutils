@@ -1,8 +1,19 @@
+2015-11-17  Enrico Schumann  <enrico.schumann@aq-investment.ch>
+
+	* R/functions.R (btable): new function
+	(latexrule): new function
+
+2015-10-20  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (toHTML.text): new method
+
+2015-10-15  Enrico Schumann  <es@enricoschumann.net>
+
+	* NEWS: added file (empty; it only points to the ChangeLog)
+
 2015-10-15  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.0-5
-
-2015-10-15  Enrico Schumann  <es@enricoschumann.net>
 
 	* R/functions.R (char2num): the function now uses
 	'Sys.localeconv()[["decimal_point"]]' as the decimal separator;

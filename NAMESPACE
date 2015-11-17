@@ -1,7 +1,9 @@
 ## exportPattern("^[[:alpha:]]+")
 export(
     ## TeXunits,
+    btable,
     char2num,
+    latexrule,
     rmrp,
     rmspace,
     strexp,
@@ -10,5 +12,6 @@ export(
     trim,
     valign
 )
-S3method(toText, default)
 S3method(print, text)
+S3method(toHTML, text)
+S3method(toText, default)
