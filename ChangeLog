@@ -1,4 +1,8 @@
-2015-11-17  Enrico Schumann  <enrico.schumann@aq-investment.ch>
+2015-11-17  Enrico Schumann  <es@enricoschumann.net>
+
+	* DESCRIPTION (Version): Version: 0.0-6
+
+	* vignettes/tex_helpers.Rnw: added fule
 
 	* R/functions.R (btable): new function
 	(latexrule): new function
