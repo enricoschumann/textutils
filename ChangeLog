@@ -2,7 +2,7 @@
 
 	* DESCRIPTION (Version): Version: 0.0-6
 
-	* vignettes/tex_helpers.Rnw: added fule
+	* vignettes/tex_helpers.Rnw: added file
 
 	* R/functions.R (btable): new function
 	(latexrule): new function

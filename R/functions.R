@@ -167,6 +167,7 @@ align <- function(s, pattern, sep = " ", justify = "right", fixed = TRUE, at) {
     }
     res
 }
+
 nspace <- function(n) {
     ans <- character(length(n))
     for (i in seq_along(n))
