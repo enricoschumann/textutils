@@ -1,3 +1,9 @@
+2016-02-22  Enrico Schumann  <es@enricoschumann.net>
+
+	* DESCRIPTION (Version): Version: 0.1-0
+
+	* man/btable.Rd, latexrule.Rd: added files
+
 2015-11-17  Enrico Schumann  <es@enricoschumann.net>
 
 	* DESCRIPTION (Version): Version: 0.0-6

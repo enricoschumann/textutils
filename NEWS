@@ -1,1 +1,4 @@
-please see the ChangeLog
+v0.1-0  (2016-02-22)
+
+  o first release. The main purpose of the package is to provide
+  generic functions: toHTML and toText.

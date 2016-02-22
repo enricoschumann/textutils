@@ -63,7 +63,7 @@ cat(btable(x, before = paste(1:5, "&"), after= "\\\\\n"))
 \end{tabular}
 
 
-\section{latexrule}
+%% \section{latexrule}
 
 
 \newpage
