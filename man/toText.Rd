@@ -25,9 +25,9 @@ toText(x, ...)
   
   A generic function. Method are expected to coerce a given object to
   lines of human-readable text that can be used, for instance, for
-  reports. (The purpose of \code{toText} is not to store data in a form
-  that can be read and understood by R; for that, see \code{\link{dput}}
-  or \code{\link{dump}}.
+  reports. The purpose of \code{toText} is \bold{not} to store data in a
+  form that can be read and understood by R; for that, see
+  \code{\link{dput}} or \code{\link{dump}}.
   
   The \code{print} method is essentially equivalent to \code{cat(x, sep
     = "\n")} .
@@ -40,7 +40,7 @@ toText(x, ...)
 \value{
 
   A character vector (lines of text), possibly with a class attribute
-  \code{text} (even though that is not used currently).
+  \code{text}.
 
 }
 \author{
@@ -51,4 +51,5 @@ toText(x, ...)
 }
 \examples{
 toText(c("a", "b", "c"))
+toHTML(toText(c("a", "b", "c")))
 }

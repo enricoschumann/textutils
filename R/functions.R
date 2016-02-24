@@ -9,7 +9,10 @@ toText.default <- function(x, ...) {
     class(ans) <- "text"
     ans
 }
-    
+
+print.text <- function(x, ...)
+    cat(x, sep = "\n", ...)
+
 toHTML <- function(x, ...)
     UseMethod("toHTML")
 
@@ -22,9 +25,6 @@ toHTML.text <- function(x, ...){
     ans <- capture.output(write(as.character(x), ""))
     c("<pre>", ans, "</pre>")
 }
-
-print.text <- function(x, ...)
-    cat(x, sep = "\n", ...)
 
 ## remove space at beginning or end of string
 rmspace <- function(s, leading = TRUE, trailing = TRUE) {
