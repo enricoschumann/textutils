@@ -13,13 +13,18 @@ http://enricoschumann.net. In an R session, just type:
     install.packages('textutils', type = 'source',
                      repos = c('http://enricoschumann.net/R', getOption('repos')))
 
-For the latest development version, check out the latest repository
-and build it. In a shell (e.g. dash, bash):
 
+For the latest development version, check out the Git repository and
+build it. In a shell (e.g. dash, bash):
+
+    ## first time
     git clone https://github.com/enricoschumann/textutils.git
+
+    ## later: cd to directory and ...
+    git pull
+
     R CMD build textutils
     R CMD INSTALL textutils_0.1-0.tar.gz  ## adapt version number
 
     ## optionally check
     R CMD check   textutils_0.1-0.tar.gz  ## adapt version number
-    
