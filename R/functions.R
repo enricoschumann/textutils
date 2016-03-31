@@ -26,18 +26,6 @@ toHTML.text <- function(x, ...){
     c("<pre>", ans, "</pre>")
 }
 
-## remove space at beginning or end of string
-rmspace <- function(s, leading = TRUE, trailing = TRUE) {
-    .Deprecated("trim", "textutils",
-                paste0(sQuote("rmspace"), " is deprecated. Use ",
-                       sQuote("trim"), " instead.", collapse = ""))
-    if (leading)
-        s <- gsub("^\\s*", "", s)
-    if (trailing)
-        s <- gsub("\\s*$", "", s)
-    s
-}
-
 trim <- function(s, leading = TRUE, trailing = TRUE, perl = TRUE, ...) {
     if (leading && trailing)
         gsub("^\\s+|\\s+$", "", s, perl = perl, ...)
