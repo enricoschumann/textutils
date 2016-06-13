@@ -55,12 +55,6 @@ char2num <- function(s, dec = ",", big.mark = ".") {
     as.numeric(sub(dec, Sys.localeconv()[["decimal_point"]], s, fixed = TRUE))
 }
 
-## TeXBook, p. 57
-.TeXunit.table <- c("cm" = 1864680,
-                    "in" = 4736287,
-                    "pt" = 65536,
-                    "pc" = 786432
-                    )
 
 ## remove repeated pattern
 rmrp <- function(s, pattern, ...) {
@@ -69,7 +63,6 @@ rmrp <- function(s, pattern, ...) {
         s <- s[-i[which(c(FALSE, ii))]]    
     s
 }
-
 
 ## remove blank lines at beginning/end
 rmbl <- function(s, pattern = "^$| +", ..., leading=TRUE , trailing=TRUE) {
@@ -83,6 +76,17 @@ s <- c("",""," ", "sahs", "jwhd", "", "", "", "", "", "")
         stop("to be written")
     s[-rm]    
 }
+
+## TeXBook, p. 57
+.TeXunit.table <- c("cm" = 1864680,
+                    "in" = 4736287,
+                    "pt" = 65536,
+                    "pc" = 786432,
+                    "bp" = 65536*72.27/72,
+                    "mm" = 186468,
+                    "dd" = 65536*1238/1157,
+                    "cc" = 12*65536*1238/1157
+                    )
 
 ## convert from one TeXunit to another
 TeXunits <- function(from, to, from.unit = NULL) {
