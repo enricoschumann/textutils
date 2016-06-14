@@ -1,3 +1,8 @@
+v0.1-2  (2016-06-14)
+
+  o TeXunits: both 'from' and 'to' can be  vectors of
+    length > 1
+
 v0.1-1  (2016-06-14)
 
   o new function TeXunits
