@@ -1,6 +1,6 @@
 ## exportPattern("^[[:alpha:]]+")
 export(
-    ## TeXunits,
+    TeXunits,
     btable,
     char2num,
     latexrule,

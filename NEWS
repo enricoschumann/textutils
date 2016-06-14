@@ -1,4 +1,8 @@
+v0.1-1  (2016-06-14)
+
+  o new function TeXunits
+
 v0.1-0  (2016-02-22)
 
-  o first release. The main purpose of the package is to provide
-  generic functions: toHTML and toText.
+  o first release. The main purpose of the package is
+    to provide generic functions: toHTML and toText.

@@ -77,7 +77,7 @@ s <- c("",""," ", "sahs", "jwhd", "", "", "", "", "", "")
     s[-rm]    
 }
 
-## TeXBook, p. 57
+## TeXbook, p. 57
 .TeXunit.table <- c("cm" = 1864680,
                     "in" = 4736287,
                     "pt" = 65536,
@@ -85,8 +85,7 @@ s <- c("",""," ", "sahs", "jwhd", "", "", "", "", "", "")
                     "bp" = 65536*72.27/72,
                     "mm" = 186468,
                     "dd" = 65536*1238/1157,
-                    "cc" = 12*65536*1238/1157
-                    )
+                    "cc" = 12*65536*1238/1157)
 
 ## convert from one TeXunit to another
 TeXunits <- function(from, to, from.unit = NULL) {
