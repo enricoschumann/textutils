@@ -1,6 +1,5 @@
 \name{trim}
 \alias{trim}
-\alias{rmspace}
 \title{
   Remove Leading and Trailing White Space
 }
@@ -9,7 +8,6 @@
 }
 \usage{
 trim(s, leading = TRUE, trailing = TRUE, perl = TRUE, \dots)
-rmspace(s, leading = TRUE, trailing = TRUE)
 }
 \arguments{
   \item{s}{a character vector}
