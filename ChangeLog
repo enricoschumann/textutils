@@ -1,5 +1,7 @@
 2016-06-14  Enrico Schumann  <es@enricoschumann.net>
 
+        * DESCRIPTION (Version): 0.1-1
+
 	* NAMESPACE: document and export TeXunits
 
 2016-06-13  Enrico Schumann  <es@enricoschumann.net>
