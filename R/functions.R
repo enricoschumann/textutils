@@ -89,6 +89,8 @@ s <- c("",""," ", "sahs", "jwhd", "", "", "", "", "", "")
 
 ## convert from one TeXunit to another
 TeXunits <- function(from, to, from.unit = NULL) {
+    if (length(from) > 1L && length(to) > 1L)
+        to <- rep(to, each = length(from))
     if (!is.null(from.unit))
         frU <- from.unit
     else

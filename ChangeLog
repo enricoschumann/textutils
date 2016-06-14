@@ -1,5 +1,10 @@
 2016-06-14  Enrico Schumann  <es@enricoschumann.net>
 
+	* R/functions.R (TeXunits): the function now
+	works when both 'from' and 'to' are vectors
+
+2016-06-14  Enrico Schumann  <es@enricoschumann.net>
+
         * DESCRIPTION (Version): 0.1-1
 
 	* NAMESPACE: document and export TeXunits

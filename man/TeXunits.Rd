@@ -29,7 +29,7 @@ TeXunits(from, to, from.unit = NULL)
 
   Available units are centimetre (\code{cm}), inch (\code{in}), point
   (\code{pt}), pica (\code{pc}), big point(\code{bp}), millimetre
-  (\code{mm}), Diderot (\code{dd}) and Cicero (\code{cc}).
+  (\code{mm}), Didot points (\code{dd}) and Cicero (\code{cc}).
   
   See chapter~10 of the TeXbook for details.
 
@@ -49,5 +49,9 @@ TeXunits(from, to, from.unit = NULL)
   
 }
 \examples{
-TeXunits("1in", c("in", "mm", "in", "pt"))
+TeXunits("1in", c("in", "mm", "pt"))
+TeXunits(c("1in", "2in"), c("cm"))
+
+## possible, but less useful
+TeXunits(c("1cm", "2cm"), c("in", "mm", "pt"))
 }
