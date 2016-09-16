@@ -1,3 +1,7 @@
+2016-09-15  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (HTMLdecode): add function
+
 2016-06-14  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.1-2

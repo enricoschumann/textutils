@@ -230,3 +230,19 @@ btable <- function(x, unit = "cm", before = "", after = "",
 ## Dez 2001 & 1,0000 & \raisebox{0.1ex}{\rule{1.0000cm}{0.7ex}} \\
 ## Jan 2001 & 1,0210 & \raisebox{0.1ex}{\rule{1.0210cm}{0.7ex}}                                  \\
 ## \end{tabular}
+
+
+HTMLdecode <- function(x) {
+
+    from_to <- c("&#38;", "&",
+                 "&amp;", "&")
+
+    ii <- seq.int(1, length(from_to), 2)
+    from <- from_to[ii]
+    to   <- from_to[ii + 1]
+
+    for (i in seq_along(from)) {
+        x <- gsub(from[i], to[i], x, fixed = TRUE)
+    }
+    x
+}
