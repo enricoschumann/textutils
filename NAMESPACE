@@ -15,3 +15,5 @@ export(
 S3method(print, text)
 S3method(toHTML, text)
 S3method(toText, default)
+
+importFrom("utils", "capture.output")
