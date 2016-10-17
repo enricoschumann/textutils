@@ -39,8 +39,8 @@ btable(x, unit = "cm", before = "", after = "", raise = "0.2ex",
 \value{
   character
 }
-\references{
-}
+%% \references{
+%% }
 \author{
   Enrico Schumann
 }

@@ -45,9 +45,9 @@ TeXunits(from, to, from.unit = NULL)
 \author{
   Enrico Schumann
 }
-\seealso{
+%% \seealso{
   
-}
+%% }
 \examples{
 TeXunits("1in", c("in", "mm", "pt"))
 TeXunits(c("1in", "2in"), c("cm"))
