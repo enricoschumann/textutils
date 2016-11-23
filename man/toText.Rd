@@ -29,11 +29,11 @@ toText(x, ...)
   form that can be read and understood by R; for that, see
   \code{\link{dput}} or \code{\link{dump}}.
   
-  The \code{print} method is essentially equivalent to \code{cat(x, sep
-    = "\n")} .
+  The \code{print} method is essentially equivalent to
+    \code{cat(x, sep = "\n")} .
   
   There is no restriction on encoding, so plain text does not
-  necessarily mean \acronym{ascii}.  But current methods do not map into
+  necessarily mean \acronym{ASCII}.  But current methods do not map into
   markup-representations.
 
 }
