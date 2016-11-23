@@ -246,3 +246,17 @@ HTMLdecode <- function(x) {
     }
     x
 }
+
+
+## 0.9 * getOption("width")
+## width <- 50
+## s <- "Peter came much later to the party; he left early, nevertheless."
+
+pr_abbr <- function(s, width, repl = " [...]", use.blank = 10) {
+    ns <- nchar(s)
+    long <- ns > 50
+    ns[long] + nchar(repl)
+
+    paste0(substring(s, 1, width - use.blank + nchar(repl)), repl)
+
+}
