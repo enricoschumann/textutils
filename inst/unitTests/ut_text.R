@@ -1,5 +1,4 @@
 ## -*- truncate-lines: t; -*-
-## Time-stamp: <2015-10-15 06:52:06 CEST (es)>
 
 test.expstr <- function() {
 
