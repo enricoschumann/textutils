@@ -1,5 +1,8 @@
 2016-11-23  Enrico Schumann  <es@enricoschumann.net>
 
+	* inst/unitTests/runTests.R: rewrite run script
+	for unit tests; update unit tests
+
 	* R/functions.R (pr_abbr): add outline of
 	function 'pr_abbr' ("pretty abbreviate")
 
