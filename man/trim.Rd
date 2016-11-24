@@ -21,9 +21,6 @@ trim(s, leading = TRUE, trailing = TRUE, perl = TRUE, \dots)
   \code{trim} removes leading and trailing space; space is recognised
   through the (Perl) regular expression \code{\\s}.
 
-  \code{rmspace} should not be used any more and will be removed in the
-  future.
-  
 }
 \value{
   a character vector

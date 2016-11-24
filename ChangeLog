@@ -1,3 +1,9 @@
+2016-11-24  Enrico Schumann  <es@enricoschumann.net>
+
+	* man/trim.Rd: remove mention of 'rmspace',
+	which is no longer available; see ChangeLog of
+	2016-03-31
+
 2016-11-23  Enrico Schumann  <es@enricoschumann.net>
 
 	* inst/unitTests/runTests.R: rewrite run script
