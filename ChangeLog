@@ -1,5 +1,7 @@
 2016-11-24  Enrico Schumann  <es@enricoschumann.net>
 
+	* R/functions.R (HTMLdecode): add more entities
+
 	* man/trim.Rd: remove mention of 'rmspace',
 	which is no longer available; see ChangeLog of
 	2016-03-31

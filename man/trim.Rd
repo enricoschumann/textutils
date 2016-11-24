@@ -18,7 +18,7 @@ trim(s, leading = TRUE, trailing = TRUE, perl = TRUE, \dots)
 }
 \details{
 
-  \code{trim} removes leading and trailing space; space is recognised
+  \code{trim} removes leading and trailing space, which is defined
   through the (Perl) regular expression \code{\\s}.
 
 }
@@ -26,7 +26,7 @@ trim(s, leading = TRUE, trailing = TRUE, perl = TRUE, \dots)
   a character vector
 }
 \seealso{
-   \code{\link{strwrap}}, \code{\link{format}}
+   \code{\link{gsub}}
 }
 \author{
   Enrico Schumann

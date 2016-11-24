@@ -233,17 +233,18 @@ btable <- function(x, unit = "cm", before = "", after = "",
 
 
 HTMLdecode <- function(x) {
-
+    
     from_to <- c("&#38;", "&",
-                 "&amp;", "&")
-
+                 "&amp;", "&",
+                 "&AMP;", "&",
+                 "&lt;",  "<",
+                 "&LT;",  "<",
+                 "&gt;",  ">",
+                 "&GT;",  ">")
+    Encoding(from_to) <- "UTF-8"
     ii <- seq.int(1, length(from_to), 2)
-    from <- from_to[ii]
-    to   <- from_to[ii + 1]
-
-    for (i in seq_along(from)) {
-        x <- gsub(from[i], to[i], x, fixed = TRUE)
-    }
+    for (i in ii)
+        x <- gsub(from_to[i], from_to[i+1], x, fixed = TRUE)
     x
 }
 
