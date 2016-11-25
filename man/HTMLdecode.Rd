@@ -20,14 +20,16 @@ HTMLdecode(x)
 \value{
 character
 }
-%% \references{
-%% }
+\references{
+  \url{}
+}
 \author{
   Enrico Schumann
 }
-%% \seealso{
-%% %% ~~objects to See Also as \code{\link{help}}, ~~~
-%% }
+\seealso{
+  \url{https://www.w3.org/TR/html5/syntax.html#named-character-references}
+}
 \examples{
 HTMLdecode("Max &#38; Moritz")
+HTMLdecode("4 &lt; 9")
 }
