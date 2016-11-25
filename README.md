@@ -15,16 +15,17 @@ http://enricoschumann.net. In an R session, just type:
 
 
 For the latest development version, check out the Git repository and
-build it. In a shell (e.g. dash, bash):
+build it. In a shell (e.g. sh or bash):
 
-    ## first time
-    git clone https://github.com/enricoschumann/textutils.git
+    ## first time: cd to directory and ...
+    $ git clone https://github.com/enricoschumann/textutils.git
 
     ## later: cd to directory and ...
-    git pull
+    $ git pull
 
-    R CMD build textutils
-    R CMD INSTALL textutils_0.1-0.tar.gz  ## adapt version number
+    ## build and install the package
+    $ R CMD build textutils
+    $ R CMD INSTALL textutils_0.1-0.tar.gz  ## adjust version number
 
     ## optionally check
-    R CMD check   textutils_0.1-0.tar.gz  ## adapt version number
+    $ R CMD check textutils_0.1-0.tar.gz    ## adjust version number
