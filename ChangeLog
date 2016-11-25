@@ -1,5 +1,7 @@
 2016-11-25  Enrico Schumann  <es@enricoschumann.net>
 
+        * DESCRIPTION (Version): 0.1-3
+
 	* R/functions.R (HTMLdecode): add complete list
 	of entities
 
