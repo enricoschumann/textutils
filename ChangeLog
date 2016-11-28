@@ -1,5 +1,7 @@
 2016-11-28  Enrico Schumann  <es@enricoschumann.net>
 
+        * DESCRIPTION (Version): 0.1-4
+
 	* man/spaces.Rd: add man page
 
 	* R/functions.R (spaces): rename 'nspace' to
