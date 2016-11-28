@@ -26,7 +26,7 @@ trim(s, leading = TRUE, trailing = TRUE, perl = TRUE, \dots)
   a character vector
 }
 \seealso{
-   \code{\link{gsub}}
+   \code{\link{gsub}}, \code{\link{strtrim}}
 }
 \author{
   Enrico Schumann

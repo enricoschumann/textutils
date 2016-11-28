@@ -6,6 +6,7 @@ export(
     char2num,
     latexrule,
     rmrp,
+    spaces,
     strexp,
     toHTML,
     toText,

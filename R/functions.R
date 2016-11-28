@@ -161,17 +161,33 @@ align <- function(s, pattern, sep = " ", justify = "right", fixed = TRUE, at) {
     res
 }
 
-nspace <- function(n) {
-    ans <- character(length(n))
-    for (i in seq_along(n))
-        ans[i] <- paste(rep.int(" ", n[i]), collapse = "")
-    ans[n == 0L] <- ""
-    ans
+## spaces0 <- function(n) {
+##     ans <- character(length(n))
+##     for (i in seq_along(n))
+##         ans[i] <- paste(rep.int(" ", n[i]), collapse = "")
+##     ans[n == 0L] <- ""
+##     ans
+## }
+
+.spaces <- "                                                                                                                                                                                                        "
+spaces <- function(n) {
+    if (max(n) > 200L)
+        .spaces <- paste(rep.int(" ", max(n)), collapse = "")
+    substring(.spaces, 0L, n)
 }
+
+## require("rbenchmark")
+## n <- rep(0:1000, 1)
+## all.equal(spaces0(n), spaces(n))
+## benchmark(spaces0(n),
+##           spaces(n),
+##           replications = 100, order = "relative",
+##           columns = c("test", "elapsed", "relative"))
+
 
 valign <- function(s, align = "|", insert.at = "<>", replace = TRUE, fixed = TRUE) {
     pos <- regexpr(align, s, fixed = fixed)
-    ns <- nspace(max(pos) - pos)
+    ns <- spaces(max(pos) - pos)
 
     for (i in seq_along(s)) 
          s[i] <- sub(insert.at, ns[i], s[i], fixed = TRUE)
