@@ -1,4 +1,4 @@
-%% \VignetteIndexEntry{TeX Helpers}
+%% \VignetteIndexEntry{btable}
 \documentclass[a4paper,11pt]{article}
 \usepackage[left = 3cm, top = 2cm, bottom = 2cm, right = 4cm]{geometry}
 \usepackage[noae,nogin]{Sweave}
@@ -21,17 +21,15 @@
 \renewenvironment{Schunk}{\vspace{\topsep}}{\vspace{\topsep}}
 \SweaveOpts{keep.source = TRUE, eps = TRUE}
 
-%% in manual: *do* *not* *edit*
-
 <<echo=false>>=
 options(continue = " ", digits = 3, width = 60, useFancyQuotes = FALSE)
 @
 
 \begin{document}
-\title{\TeX\ Helpers}
+\title{Using btable}
 \author{Enrico Schumann\\\url{es@enricoschumann.net}}
 
-{\raggedright{\LARGE \TeX\ Helpers}}\medskip
+{\raggedright{\LARGE \texttt{btable}}}\medskip
 
 \noindent Enrico Schumann\\
 \noindent \url{es@enricoschumann.net}\\
@@ -43,7 +41,8 @@ require("textutils")
 
 \section{btable}
 
-Add this to a Sweave file:
+\texttt{btable} creates a simple barplot in a \LaTeX\ tabular. As an
+example, add this to a Sweave file:
 \begin{verbatim}
  \begin{tabular}{ll}
  <<echo=false, results=tex>>=
