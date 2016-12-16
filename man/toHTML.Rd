@@ -24,9 +24,11 @@ toHTML(x, ...)
   generic.
 
   The \sQuote{semantics} of this function are that they take an
-  arbitrary R object and return an HTML snippet that can be placed in
-  reports. In contrast, the purpose of \code{\link[tools]{toHTML}} is to
-  provide a whole HTML document.
+  arbitrary R object and return an \acronym{HTML} snippet that can be
+  placed in reports (i.e. in the same spirit as
+  \code{\link{toLatex}}). By contrast, the purpose of
+  \code{\link[tools]{toHTML}} in \pkg{tools} is to provide a whole
+  \acronym{HTML} document.
   
 }
 \value{

@@ -17,8 +17,6 @@ valign(s, align = "|", insert.at = "<>", replace = TRUE, fixed = TRUE)
   \item{fixed}{logical}
 }
 \details{
-
-  \strong{Experimental.}
   
   The function expands the elements of a character vector in such a way
   that the elements are vertically aligned, which can be handy when

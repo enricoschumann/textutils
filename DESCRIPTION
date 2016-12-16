@@ -5,6 +5,12 @@ Version: 0.1-5
 Date: 2016-12-16
 Author: Enrico Schumann
 Maintainer: Enrico Schumann <es@enricoschumann.net>
-Description: Utilities for handling character vectors that store
-  human-readable text (either plain or with markup, such as HTML).
+Description: Utilities for handling character vectors
+  that store human-readable text (either plain or with
+  markup, such as HTML or LaTeX). The package provides,
+  in particular, functions that help with the
+  preparation of plain-text reports (e.g. for expanding
+  and aligning strings that form the lines of such
+  reports); the package also provides generic functions for
+  transforming R objects to HTML and to plain text.
 License: GPL-3
