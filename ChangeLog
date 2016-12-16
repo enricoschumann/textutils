@@ -1,5 +1,9 @@
 2016-12-16  Enrico Schumann  <es@enricoschumann.net>
 
+	* DESCRIPTION (Description): expand description
+
+2016-12-16  Enrico Schumann  <es@enricoschumann.net>
+
         * DESCRIPTION (Version): 0.1-5
 
 	* R/functions.R (char2num): remove function
