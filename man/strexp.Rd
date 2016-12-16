@@ -24,7 +24,7 @@ strexp(s, after, width, fill = " ", at)
 \details{
 
   \code{strexp} inserts blanks into the elements of a character vector
-  such that all elements have the same \code{width} (ie,
+  such that all elements have the same \code{width} (i.e.
   \code{\link{nchar}}).  Note that it will (currently) not contract a
   string, only expand it.
 }

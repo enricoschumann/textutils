@@ -1,3 +1,14 @@
+2016-12-16  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (char2num): remove function
+	(expstr): remove function -- use 'strexp'
+	instead
+
+2016-11-30  Enrico Schumann  <es@enricoschumann.net>
+
+	* inst/unitTests/ut_text.R: move all tests
+	to a single file
+
 2016-11-28  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.1-4

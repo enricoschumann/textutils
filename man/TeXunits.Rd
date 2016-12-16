@@ -5,7 +5,7 @@
 }
 \description{
 
-  Translates units of measurement known to TeX and LaTeX
+  Translates units of measurement known to TeX and LaTeX.
 
 }
 \usage{
@@ -31,7 +31,7 @@ TeXunits(from, to, from.unit = NULL)
   (\code{pt}), pica (\code{pc}), big point(\code{bp}), millimetre
   (\code{mm}), Didot points (\code{dd}) and Cicero (\code{cc}).
   
-  See chapter~10 of the TeXbook for details.
+  See Chapter 10 of the TeXbook for details.
 
 }
 \value{
@@ -49,9 +49,8 @@ TeXunits(from, to, from.unit = NULL)
   
 %% }
 \examples{
-TeXunits("1in", c("in", "mm", "pt"))
-TeXunits(c("1in", "2in"), c("cm"))
-
-## possible, but less useful
-TeXunits(c("1cm", "2cm"), c("in", "mm", "pt"))
+TeXunits("1in",
+         c("in", "mm", "pt", "in"))
+TeXunits(c("1in", "2in"),
+         "cm")
 }

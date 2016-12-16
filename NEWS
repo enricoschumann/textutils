@@ -1,13 +1,26 @@
+v0.1-5  (2016-12-16)
+  
+  o Functions 'char2num' and 'expstr' are removed (for
+    the latter, use 'strexp' instead)
+
+v0.1-4  (2016-11-28)
+
+  o new function 'spaces'
+
+v0.1-3  (2016-11-25)
+
+  o new function 'HTMLdecode'
+
 v0.1-2  (2016-06-14)
 
-  o TeXunits: both 'from' and 'to' can be  vectors of
+  o TeXunits: both 'from' and 'to' can be vectors of
     length > 1
 
 v0.1-1  (2016-06-14)
 
-  o new function TeXunits
+  o new function 'TeXunits'
 
 v0.1-0  (2016-02-22)
 
-  o first release. The main purpose of the package is
+  o First release. The main purpose of the package is
     to provide generic functions: toHTML and toText.

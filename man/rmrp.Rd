@@ -16,7 +16,7 @@ rmrp(s, pattern, \dots)
 }
 \details{
 
-  \code{rmrp} removes a repeated pattern in a character vector (eg,
+  \code{rmrp} removes a repeated pattern in a character vector (e.g.
   repeated blank lines).
   
 }

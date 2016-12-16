@@ -51,5 +51,6 @@ toText(x, ...)
 }
 \examples{
 toText(c("a", "b", "c"))
-toHTML(toText(c("a", "b", "c")))
+cat(toHTML(toText(c("a", "b", "c"))))
+
 }

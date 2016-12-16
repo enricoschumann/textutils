@@ -15,20 +15,20 @@ HTMLdecode(x)
 }
 }
 \details{
-  Decode to UTF-8.
+  Decodes to \acronym{UTF}-8.
 }
 \value{
 character
 }
 \references{
-  \url{}
+  \url{https://www.w3.org/TR/html5/syntax.html#named-character-references}
 }
 \author{
   Enrico Schumann
 }
-\seealso{
-  \url{https://www.w3.org/TR/html5/syntax.html#named-character-references}
-}
+%% \seealso{
+%%   URL
+%% }
 \examples{
 HTMLdecode("Max &#38; Moritz")
 HTMLdecode("4 &lt; 9")

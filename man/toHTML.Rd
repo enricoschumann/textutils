@@ -19,10 +19,11 @@ toHTML(x, ...)
 }
 \details{
 
-  There exists \code{toHTML} methods in several packages: in
-  \pkg{tools}, \pkg{XML}. \pkg{R2HTML} has a \code{HTML} generic.
+  There exists \code{toHTML} methods in several packages, e.g. in
+  \pkg{tools} or \pkg{XML}. Package \pkg{R2HTML} has a \code{HTML}
+  generic.
 
-  The \sQuote{"semantics"} of this function are that they take an
+  The \sQuote{semantics} of this function are that they take an
   arbitrary R object and return an HTML snippet that can be placed in
   reports. In contrast, the purpose of \code{\link[tools]{toHTML}} is to
   provide a whole HTML document.

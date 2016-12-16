@@ -12,10 +12,10 @@ btable(x, unit = "cm", before = "", after = "", raise = "0.2ex",
 }
 \arguments{
   \item{x}{
-    numeric
+    numeric: the numbers for which the barplot is to be created
 }
   \item{unit}{
-    character
+    character: a valid TeX unit
 }
   \item{before}{
     character
@@ -34,7 +34,7 @@ btable(x, unit = "cm", before = "", after = "", raise = "0.2ex",
 }
 }
 \details{
-  Experimental. Creates a barplot table.
+  Creates a barplot table.
 }
 \value{
   character
@@ -46,7 +46,7 @@ btable(x, unit = "cm", before = "", after = "", raise = "0.2ex",
 }
 \seealso{
 
-  \code{\link{toLatex}}, \code{\link[NMOF]{qTable}}
+  \code{\link{toLatex}}, \code{\link[NMOF]{qTable}}, \code{\link{TeXunits}}
 
 }
 \examples{
