@@ -53,7 +53,7 @@ Add this to a Sweave file:
  \end{tabular}
 \end{verbatim}
 
-The output should be:
+\noindent The output should be:
 
 \begin{tabular}{ll}
 <<echo=false, results=tex>>=
