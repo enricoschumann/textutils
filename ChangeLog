@@ -1,3 +1,9 @@
+2017-03-30  Enrico Schumann  <es@enricoschumann.net>
+
+	* DESCRIPTION (Version): 0.1-7
+
+	* vignettes/btable.Rnw: replace magic numbers
+
 2016-12-16  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.1-6
