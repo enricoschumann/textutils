@@ -47,7 +47,7 @@ example, add this to a Sweave file:
  \begin{tabular}{ll}
  <<echo=false, results=tex>>=
  x <- 1:5
- cat(btable(x, before = paste(1:5, "&"), after= "\\\\\n"))
+ cat(btable(x, before = paste(x, "&"), after= "\\\\\n"))
  @ 
  \end{tabular}
 \end{verbatim}
