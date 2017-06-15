@@ -8,7 +8,7 @@ text (either plain or with markup, such as HTML).
 ## Installing the package
 
 A stable version of the package is available from
-[ CRAN ](https://CRAN.R-project.org/package=textutils)
+[ CRAN ](https://CRAN.R-project.org/package=textutils).
 
 
 The latest version is available from
