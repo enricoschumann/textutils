@@ -7,7 +7,11 @@ text (either plain or with markup, such as HTML).
 
 ## Installing the package
 
-The latest released version is available from
+A stable version of the package is available from
+[ CRAN ](https://CRAN.R-project.org/package=textutils)
+
+
+The latest version is available from
 http://enricoschumann.net. In an R session, just type:
 
     install.packages('textutils', type = 'source',
@@ -23,7 +27,7 @@ build it. In a shell (e.g. sh or bash):
     ## later: cd to directory and ...
     $ git pull
 
-    ## build and install the package
+    ## ... build and install the package
     $ R CMD build textutils
     $ R CMD INSTALL textutils_0.1-0.tar.gz  ## adjust version number
 
