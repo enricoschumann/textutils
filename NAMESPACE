@@ -13,6 +13,7 @@ export(
     valign
 )
 S3method(print, text)
+S3method(toHTML, data.frame)
 S3method(toHTML, text)
 S3method(toText, default)
 

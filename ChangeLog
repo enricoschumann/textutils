@@ -1,3 +1,9 @@
+2017-06-21  Enrico Schumann  <es@enricoschumann.net>
+
+	* DESCRIPTION (Version): Version: 0.1-8
+
+	* R/functions.R (toHTML.data.frame): new method
+
 2017-03-30  Enrico Schumann  <es@enricoschumann.net>
 
 	* DESCRIPTION (Version): 0.1-7

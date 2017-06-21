@@ -30,6 +30,30 @@ toHTML.text <- function(x, ...){
     c("<pre>", ans, "</pre>")
 }
 
+toHTML.data.frame <- function(x, ...,
+                              row.names = FALSE,
+                              class.handlers = list(),
+                              col.handlers = list()) {
+
+    dfnames <- names(x)
+    if (any(i <- names(col.handlers) %in% dfnames)) {
+        elt <- which(i)
+        for (e in elt)
+            x[[ names(col.handlers)[e] ]] <- col.handlers[[e]](x[[ names(col.handlers)[e] ]])
+    }
+    cl <- sapply(x, class)
+    for (j in seq_len(ncol(x))) {
+        if (dfnames[j] %in% names(col.handlers))
+            next
+        if (cl[j] %in% names(class.handlers))
+            x[[j]] <- class.handlers[[ cl[j] ]](x[[j]])
+    }
+    ans <- rbind(paste0("<th>", c(if (row.names) "", colnames(x)), "</th>"),
+                 cbind(if (row.names) paste0("<td>", row.names(x), "</td>"),
+                       apply(x, 2, function(x) paste0("<td>", x, "</td>"))))
+    
+    paste("<tr>", apply(ans, 1, paste, collapse = ""), "</tr>")
+}
 
 trim <- function(s, leading = TRUE, trailing = TRUE, perl = TRUE, ...) {
     if (leading && trailing)

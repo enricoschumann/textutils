@@ -34,3 +34,17 @@ test.TeXunits <- function() {
                        c(0.393700804026445, 1))
     checkEquals(names(tmp) , c("in", "cm"))
 }
+
+test.toHTML <- function() {
+    col.handlers <- list(b = function(x) x,
+                         x = function(x) round(x,1),
+                         y = function(x) round(x,2))
+    class.handlers <- list(numeric = function(x) round(x, 3))
+    
+    
+    df <- data.frame(x = runif(10)*10000000, y = rnorm(10)*20000000)
+    toHTML(df,
+           col.handlers = list(x = round),
+           class.handlers = list(numeric = function(x) round(x/1000000)))
+
+}
