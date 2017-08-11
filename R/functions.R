@@ -158,7 +158,7 @@ btable <- function(x, unit = "cm", before = "", after = "",
 }
 
 HTMLdecode <- function(x) {
-        ii <- seq.int(1, length(.html_entities), 2)
+    ii <- seq.int(1, length(.html_entities), 2)
     Encoding(x) <- "UTF-8"
     for (i in ii)
         x <- gsub(.html_entities[i], .html_entities[i+1], x)
@@ -2404,3 +2404,20 @@ HTMLdecode <- function(x) {
 Encoding(.html_entities) <- "UTF-8"
 ## Encoding(.html_entities) <- "bytes"
 
+title_case <- function(s, strict = FALSE, ignore = NULL) {
+    cap <- function(s)
+        paste(toupper(substring(s, 1, 1)),
+              if (strict)
+                  tolower(substring(s, 2))
+              else
+                  substring(s, 2),
+              sep = "", collapse = " ")
+    spl <- strsplit(s, split = " ")
+    if (!is.null(ignore)) {
+        ign <- function(s)
+            s[!s %in% ignore]
+        spl <- lapply(spl, ign)
+    }
+    unlist(lapply(spl, cap),
+           use.names = !is.null(names(s)))
+}

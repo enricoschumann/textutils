@@ -1,3 +1,8 @@
+2017-08-11  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (title_case): add function; not
+	yet exported
+
 2017-06-21  Enrico Schumann  <es@enricoschumann.net>
 
 	* DESCRIPTION (Version): Version: 0.1-8
