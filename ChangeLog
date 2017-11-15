@@ -1,3 +1,8 @@
+2017-11-15  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (fill_in): rename 'interp' to
+	'fill_in' and export function
+
 2017-11-07  Enrico Schumann  <es@enricoschumann.net>
 
 	* R/functions.R (interp): new function; not

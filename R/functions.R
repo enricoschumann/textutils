@@ -2422,15 +2422,14 @@ title_case <- function(s, strict = FALSE, ignore = NULL) {
            use.names = !is.null(names(s)))
 }
 
-interp <- function(s, ...,
-                   delim = c("{", "}")) {
+fill_in <- function(s, ..., delim = c("{", "}")) {
     val <- list(...)
     it <- if (is.null(names(val)))
               seq_along(val)
           else
               names(val)
     for (i in it)
-        s <- gsub(paste0(delim[1L], i, delim[2L]), val[[i]], s, fixed = TRUE)
-
+        s <- gsub(paste0(delim[1L], i, delim[2L]),
+                  val[[i]], s, fixed = TRUE)
     s    
 }

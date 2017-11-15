@@ -3,6 +3,7 @@ export(
     HTMLdecode,
     TeXunits,
     btable,
+    fill_in,
     latexrule,
     rmrp,
     spaces,
