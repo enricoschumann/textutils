@@ -8,6 +8,7 @@ export(
     rmrp,
     spaces,
     strexp,
+    title_case,
     toHTML,
     toText,
     trim,
@@ -16,6 +17,8 @@ export(
 S3method(print, text)
 S3method(toHTML, data.frame)
 S3method(toHTML, text)
+S3method(toLatex, data.frame)
 S3method(toText, default)
 
-importFrom("utils", "capture.output")
+importFrom("utils",
+           "capture.output", "toLatex")

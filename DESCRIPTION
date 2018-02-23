@@ -4,6 +4,7 @@ Title: Utilities for Handling Strings and Text
 Version: 0.1-8
 Date: 2017-06-21
 Author: Enrico Schumann
+Imports: utils
 Maintainer: Enrico Schumann <es@enricoschumann.net>
 Description: Utilities for handling character vectors
   that store human-readable text (either plain or with

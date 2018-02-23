@@ -55,6 +55,27 @@ toHTML.data.frame <- function(x, ...,
     paste("<tr>", apply(ans, 1, paste, collapse = ""), "</tr>")
 }
 
+toLatex.data.frame <- function(x, ...,
+                               row.names = FALSE,
+                               class.handlers = list(),
+                               col.handlers = list()) {
+
+    dfnames <- names(x)
+    if (any(i <- names(col.handlers) %in% dfnames)) {
+        elt <- which(i)
+        for (e in elt)
+            x[[ names(col.handlers)[e] ]] <- col.handlers[[e]](x[[ names(col.handlers)[e] ]])
+    }
+    cl <- sapply(x, class)
+    for (j in seq_len(ncol(x))) {
+        if (dfnames[j] %in% names(col.handlers))
+            next
+        if (cl[j] %in% names(class.handlers))
+            x[[j]] <- class.handlers[[ cl[j] ]](x[[j]])
+    }
+    paste(do.call(function(...) paste(..., sep = " & "), x), "\\\\")
+}
+
 trim <- function(s, leading = TRUE, trailing = TRUE, perl = TRUE, ...) {
     if (leading && trailing)
         gsub("^\\s+|\\s+$", "", s, perl = perl, ...)
