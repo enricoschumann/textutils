@@ -1,3 +1,13 @@
+2018-03-09  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (TeXencode): add function
+
+2018-02-28  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (fill_in): new argument
+	'replace.NA'; if TRUE (the default), NA values
+	are replaced by the string "NA"
+
 2017-12-18  Enrico Schumann  <es@enricoschumann.net>
 
 	* R/functions.R (toLatex.data.frame): new method
@@ -19,7 +29,7 @@
 
 2017-06-21  Enrico Schumann  <es@enricoschumann.net>
 
-	* DESCRIPTION (Version): Version: 0.1-8
+	* DESCRIPTION (Version): 0.1-8
 
 	* R/functions.R (toHTML.data.frame): new method
 

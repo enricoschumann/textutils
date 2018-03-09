@@ -1,6 +1,6 @@
 ## -*- truncate-lines: t; -*-
 
-toText <- function(x, ...) 
+toText <- function(x, ...)
     UseMethod("toText")
 
 
@@ -64,7 +64,8 @@ toLatex.data.frame <- function(x, ...,
     if (any(i <- names(col.handlers) %in% dfnames)) {
         elt <- which(i)
         for (e in elt)
-            x[[ names(col.handlers)[e] ]] <- col.handlers[[e]](x[[ names(col.handlers)[e] ]])
+            x[[ names(col.handlers)[e] ]] <-
+                col.handlers[[e]](x[[ names(col.handlers)[e] ]])
     }
     cl <- sapply(x, class)
     for (j in seq_len(ncol(x))) {
@@ -84,7 +85,6 @@ trim <- function(s, leading = TRUE, trailing = TRUE, perl = TRUE, ...) {
     else
         gsub("\\s+$", "", s, perl = perl, ...)
 }
-
 
 rmrp <- function(s, pattern, ...) {
     i <- grep(pattern, s, ...)
@@ -119,6 +119,20 @@ TeXunits <- function(from, to, from.unit = NULL) {
     ans
 }
 
+TeXencode <- function(s) {
+    repl <- c("&", "\\&",
+              "%", "\\%",
+              "$", "\\$",
+              "#", "\\#",
+              "_", "\\_",
+              "{", "\\{",
+              "}", "\\}")
+    ii <- seq(1, length(repl), by = 2)
+    for (i in ii) {
+        s <- gsub(repl[i], repl[i+1], s, fixed = TRUE)
+    }
+    s
+}
 
 strexp <- function(s, after, width, fill = " ", at) {
     ns <- nchar(s)
@@ -133,7 +147,6 @@ strexp <- function(s, after, width, fill = " ", at) {
     paste(substr(s, 1L, at - 1L), space,
           substr(s, at, ns), sep = "")    
 }
-
 
 .spaces <- "                                                                                                                                                                                                        "
 spaces <- function(n) {
@@ -2443,14 +2456,22 @@ title_case <- function(s, strict = FALSE, ignore = NULL) {
            use.names = !is.null(names(s)))
 }
 
-fill_in <- function(s, ..., delim = c("{", "}")) {
+fill_in <- function(s, ..., delim = c("{", "}"), replace.NA = TRUE) {
     val <- list(...)
     it <- if (is.null(names(val)))
               seq_along(val)
           else
               names(val)
-    for (i in it)
+    for (i in it) {
+        repl <- if (isTRUE(replace.NA) && is.na(val[[i]]))
+                    "NA"
+                else if (is.character(replace.NA) && is.na(val[[i]]))
+                    replace.NA
+                else
+                    val[[i]]
+
         s <- gsub(paste0(delim[1L], i, delim[2L]),
-                  val[[i]], s, fixed = TRUE)
-    s    
+                  repl, s, fixed = TRUE)
+    }
+    s
 }
