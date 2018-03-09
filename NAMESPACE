@@ -1,6 +1,7 @@
 ## exportPattern("^[[:alpha:]]+")
 export(
     HTMLdecode,
+    TeXencode,
     TeXunits,
     btable,
     fill_in,
