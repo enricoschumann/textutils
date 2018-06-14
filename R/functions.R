@@ -55,26 +55,26 @@ toHTML.data.frame <- function(x, ...,
     paste("<tr>", apply(ans, 1, paste, collapse = ""), "</tr>")
 }
 
-toLatex.data.frame <- function(x, ...,
+toLatex.data.frame <- function(object, ...,
                                row.names = FALSE,
                                class.handlers = list(),
                                col.handlers = list()) {
 
-    dfnames <- names(x)
+    dfnames <- names(object)
     if (any(i <- names(col.handlers) %in% dfnames)) {
         elt <- which(i)
         for (e in elt)
-            x[[ names(col.handlers)[e] ]] <-
-                col.handlers[[e]](x[[ names(col.handlers)[e] ]])
+            object[[ names(col.handlers)[e] ]] <-
+                col.handlers[[e]](object[[ names(col.handlers)[e] ]])
     }
-    cl <- sapply(x, class)
-    for (j in seq_len(ncol(x))) {
+    cl <- sapply(object, class)
+    for (j in seq_len(ncol(object))) {
         if (dfnames[j] %in% names(col.handlers))
             next
         if (cl[j] %in% names(class.handlers))
-            x[[j]] <- class.handlers[[ cl[j] ]](x[[j]])
+            object[[j]] <- class.handlers[[ cl[j] ]](object[[j]])
     }
-    paste(do.call(function(...) paste(..., sep = " & "), x), "\\\\")
+    paste(do.call(function(...) paste(..., sep = " & "), object), "\\\\")
 }
 
 trim <- function(s, leading = TRUE, trailing = TRUE, perl = TRUE, ...) {
@@ -189,6 +189,14 @@ btable <- function(x, unit = "cm", before = "", after = "",
     paste0(before,
            "\\raisebox{", raise, "}{\\rule{",x,"}{",height,"}}",
            after)
+}
+
+HTMLencode <- function(x) {
+    ii <- seq.int(1, length(.html_entities), 2)
+    Encoding(x) <- "UTF-8"
+    for (i in ii)
+        x <- gsub(.html_entities[i+1], .html_entities[i], x)
+    x
 }
 
 HTMLdecode <- function(x) {
