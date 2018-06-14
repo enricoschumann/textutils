@@ -1,13 +1,15 @@
 \name{HTMLdecode}
 \alias{HTMLdecode}
+\alias{HTMLencode}
 \title{
-  Decode HTML Entities
+  Decode and Encode HTML Entities
 }
 \description{
-  Decode HTML entities.
+  Decode and encode HTML entities.
 }
 \usage{
 HTMLdecode(x)
+HTMLencode(x)
 }
 \arguments{
   \item{x}{
@@ -30,6 +32,6 @@ character
 %%   URL
 %% }
 \examples{
-HTMLdecode("Max &#38; Moritz")
-HTMLdecode("4 &lt; 9")
+HTMLdecode(c("Max &#38; Moritz",
+             "4 &lt; 9"))
 }

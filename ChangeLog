@@ -1,3 +1,7 @@
+2018-06-14  Enrico Schumann  <es@enricoschumann.net>
+
+	* man/*: update documentation
+
 2018-03-09  Enrico Schumann  <es@enricoschumann.net>
 
 	* R/functions.R (TeXencode): add function
