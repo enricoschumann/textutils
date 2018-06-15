@@ -2447,22 +2447,21 @@ Encoding(.html_entities) <- "UTF-8"
 ## Encoding(.html_entities) <- "bytes"
 
 title_case <- function(s, strict = FALSE, ignore = NULL) {
-    cap <- function(s)
-        paste(toupper(substring(s, 1, 1)),
-              if (strict)
-                  tolower(substring(s, 2))
-              else
-                  substring(s, 2),
-              sep = "", collapse = " ")
     spl <- strsplit(s, split = " ")
-    if (!is.null(ignore)) {
-        ign <- function(s)
-            s[!s %in% ignore]
-        spl <- lapply(spl, ign)
+    for (i in seq_along(spl)) {
+        if (!is.null(ignore)) {
+            do <- !spl[[i]] %in% ignore
+        } else
+            do <- rep(TRUE, length(spl[[i]]))
+        if (strict)
+            spl[[i]][do] <- tolower(spl[[i]][do])
+        substr(spl[[i]][do],1,1) <- toupper(substr(spl[[i]][do],1,1))
     }
-    unlist(lapply(spl, cap),
+    
+    unlist(lapply(spl, paste0, collapse = " "),
            use.names = !is.null(names(s)))
 }
+
 
 fill_in <- function(s, ..., delim = c("{", "}"), replace.NA = TRUE) {
     val <- list(...)

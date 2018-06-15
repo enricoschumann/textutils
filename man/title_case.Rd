@@ -10,9 +10,14 @@
 title_case(s, strict = FALSE, ignore = NULL)
 }
 \arguments{
+
   \item{s}{a character vector}
-  \item{strict}{logical}
+
+  \item{strict}{logical: if TRUE, only the first letter
+    of each word is uppercase}
+
   \item{ignore}{character}
+
 }
 \details{
 
@@ -23,11 +28,11 @@ title_case(s, strict = FALSE, ignore = NULL)
   a character vector
 }
 \seealso{
-  \code{\link{tolower}}, \code{\link{toupper}}
+  \code{\link{tolower}}, \code{\link{toupper}}.
 }
 \author{
   Enrico Schumann
 }
 \examples{
-title_case("Numeric methods")
+title_case("text mining")
 }

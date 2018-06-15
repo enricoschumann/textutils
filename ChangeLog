@@ -1,3 +1,7 @@
+2018-06-15  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (title_case): export function
+
 2018-06-14  Enrico Schumann  <es@enricoschumann.net>
 
 	* man/*: update documentation
