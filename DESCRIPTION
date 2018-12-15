@@ -1,8 +1,8 @@
 Package: textutils
 Type: Package
 Title: Utilities for Handling Strings and Text
-Version: 0.1-9
-Date: 2018-08-16
+Version: 0.1-10
+Date: 2018-12-15
 Imports: utils
 Maintainer: Enrico Schumann <es@enricoschumann.net>
 Authors@R: person("Enrico", "Schumann",

@@ -1,216 +1,224 @@
+2018-12-14  Enrico Schumann  <es@enricoschumann.net>
+
+        * DESCRIPTION (Version): 0.1-10
+
+        * R/functions.R (toLatex.data.frame): new
+        argument eol, with default "\\\\"
+
+        * man/toLatex.data.frame.Rd: add man page
+
 2017-08-16  Enrico Schumann  <es@enricoschumann.net>
 
-	* DESCRIPTION (Version): 0.1-9
+        * DESCRIPTION (Version): 0.1-9
 
 2018-06-22  Enrico Schumann  <es@enricoschumann.net>
 
-	* DESCRIPTION (URL): add URL
-	(Maintainer): add ORCID
+        * DESCRIPTION (URL): add URL
+        (Maintainer): add ORCID
 
 2018-06-15  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (title_case): export function
+        * R/functions.R (title_case): export function
 
 2018-06-14  Enrico Schumann  <es@enricoschumann.net>
 
-	* man/*: update documentation
+        * man/*: update documentation
 
 2018-03-09  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (TeXencode): add function
+        * R/functions.R (TeXencode): add function
 
 2018-02-28  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (fill_in): new argument
-	'replace.NA'; if TRUE (the default), NA values
-	are replaced by the string "NA"
+        * R/functions.R (fill_in): new argument
+        'replace.NA'; if TRUE (the default), NA values
+        are replaced by the string "NA"
 
 2017-12-18  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (toLatex.data.frame): new method
+        * R/functions.R (toLatex.data.frame): new method
 
 2017-11-15  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (fill_in): rename 'interp' to
-	'fill_in' and export function
+        * R/functions.R (fill_in): rename 'interp' to
+        'fill_in' and export function
 
 2017-11-07  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (interp): new function; not
-	exported yet
+        * R/functions.R (interp): new function; not
+        exported yet
 
 2017-08-11  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (title_case): add function; not
-	yet exported
+        * R/functions.R (title_case): add function; not
+        yet exported
 
 2017-06-21  Enrico Schumann  <es@enricoschumann.net>
 
-	* DESCRIPTION (Version): 0.1-8
+        * DESCRIPTION (Version): 0.1-8
 
-	* R/functions.R (toHTML.data.frame): new method
+        * R/functions.R (toHTML.data.frame): new method
 
 2017-03-30  Enrico Schumann  <es@enricoschumann.net>
 
-	* DESCRIPTION (Version): 0.1-7
+        * DESCRIPTION (Version): 0.1-7
 
-	* vignettes/btable.Rnw: replace magic numbers
+        * vignettes/btable.Rnw: replace magic numbers
 
 2016-12-16  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.1-6
 
-	* DESCRIPTION (Description): expand description
+        * DESCRIPTION (Description): expand description
 
 2016-12-16  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.1-5
 
-	* R/functions.R (char2num): remove function
-	(expstr): remove function -- use 'strexp'
-	instead
+        * R/functions.R (char2num): remove function
+        (expstr): remove function -- use 'strexp'
+        instead
 
 2016-11-30  Enrico Schumann  <es@enricoschumann.net>
 
-	* inst/unitTests/ut_text.R: move all tests
-	to a single file
+        * inst/unitTests/ut_text.R: move all tests
+        to a single file
 
 2016-11-28  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.1-4
 
-	* man/spaces.Rd: add man page
+        * man/spaces.Rd: add man page
 
-	* R/functions.R (spaces): rename 'nspace' to
-	'spaces' and export the function
+        * R/functions.R (spaces): rename 'nspace' to
+        'spaces' and export the function
 
-	* inst/unitTests/ut_text.R (test.spaces): add tests
+        * inst/unitTests/ut_text.R (test.spaces): add tests
 
 2016-11-25  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.1-3
 
-	* R/functions.R (HTMLdecode): add complete list
-	of entities
+        * R/functions.R (HTMLdecode): add complete list
+        of entities
 
 2016-11-24  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (HTMLdecode): add more entities
+        * R/functions.R (HTMLdecode): add more entities
 
-	* man/trim.Rd: remove mention of 'rmspace',
-	which is no longer available; see ChangeLog of
-	2016-03-31
+        * man/trim.Rd: remove mention of 'rmspace',
+        which is no longer available; see ChangeLog of
+        2016-03-31
 
 2016-11-23  Enrico Schumann  <es@enricoschumann.net>
 
-	* inst/unitTests/runTests.R: rewrite run script
-	for unit tests; update unit tests
+        * inst/unitTests/runTests.R: rewrite run script
+        for unit tests; update unit tests
 
-	* R/functions.R (pr_abbr): add outline of
-	function 'pr_abbr' ("pretty abbreviate")
+        * R/functions.R (pr_abbr): add outline of
+        function 'pr_abbr' ("pretty abbreviate")
 
 2016-10-17  Enrico Schumann  <es@enricoschumann.net>
 
-	* NAMESPACE: import `utils::capture.output`
+        * NAMESPACE: import `utils::capture.output`
 
-	* man/HTMLdecode.Rd: add man page
+        * man/HTMLdecode.Rd: add man page
 
 2016-09-15  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (HTMLdecode): add function
+        * R/functions.R (HTMLdecode): add function
 
 2016-06-14  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.1-2
 
-	* R/functions.R (TeXunits): the function now
-	works when both 'from' and 'to' are vectors
+        * R/functions.R (TeXunits): the function now
+        works when both 'from' and 'to' are vectors
 
 2016-06-14  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.1-1
 
-	* NAMESPACE: document and export TeXunits
+        * NAMESPACE: document and export TeXunits
 
 2016-06-13  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (TeXunits,.TeXunit.table): add
-	remaining units from TeXBook
+        * R/functions.R (TeXunits,.TeXunit.table): add
+        remaining units from TeXBook
 
 2016-03-31  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (rmspace): remove function -- use
-	trim instead
+        * R/functions.R (rmspace): remove function -- use
+        trim instead
 
 2016-02-22  Enrico Schumann  <es@enricoschumann.net>
 
-	* DESCRIPTION (Version): Version: 0.1-0
+        * DESCRIPTION (Version): Version: 0.1-0
 
-	* man/btable.Rd, latexrule.Rd: added files
+        * man/btable.Rd, latexrule.Rd: added files
 
 2015-11-17  Enrico Schumann  <es@enricoschumann.net>
 
-	* DESCRIPTION (Version): Version: 0.0-6
+        * DESCRIPTION (Version): Version: 0.0-6
 
-	* vignettes/tex_helpers.Rnw: added file
+        * vignettes/tex_helpers.Rnw: added file
 
-	* R/functions.R (btable): new function
-	(latexrule): new function
+        * R/functions.R (btable): new function
+        (latexrule): new function
 
 2015-10-20  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (toHTML.text): new method
+        * R/functions.R (toHTML.text): new method
 
 2015-10-15  Enrico Schumann  <es@enricoschumann.net>
 
-	* NEWS: added file (empty; it only points to the ChangeLog)
+        * NEWS: added file (empty; it only points to the ChangeLog)
 
 2015-10-15  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.0-5
 
-	* R/functions.R (char2num): the function now uses
-	'Sys.localeconv()[["decimal_point"]]' as the decimal separator;
-	but see the caveats at ?Sys.localeconv
+        * R/functions.R (char2num): the function now uses
+        'Sys.localeconv()[["decimal_point"]]' as the decimal separator;
+        but see the caveats at ?Sys.localeconv
 
-	* NAMESPACE: 'expstr' is no longer exported (use 'strexp' instead)
+        * NAMESPACE: 'expstr' is no longer exported (use 'strexp' instead)
 
-	* man/rmrp.Rd: added man page
+        * man/rmrp.Rd: added man page
 
-	* man/strexp.Rd: added man page
+        * man/strexp.Rd: added man page
 
-	* man/char2num.Rd: added man page
+        * man/char2num.Rd: added man page
 
 2015-09-29  Enrico Schumann  <es@enricoschumann.net>
 
-	* man/valign.Rd: added man page
+        * man/valign.Rd: added man page
 
 2015-09-29  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.0-4
 
-	* man/trim.Rd: new help page for 'trim'
+        * man/trim.Rd: new help page for 'trim'
 
-	* R/functions.R (rmspace): added call to '.Deprecated'.
+        * R/functions.R (rmspace): added call to '.Deprecated'.
 
 2015-08-18  Enrico Schumann  <es@enricoschumann.net>
 
-	* DESCRIPTION (Version): Version: 0.0-3
+        * DESCRIPTION (Version): Version: 0.0-3
 
-	* R/functions.R (toText.default): 'toText.default' now attaches
-	'text' class
+        * R/functions.R (toText.default): 'toText.default' now attaches
+        'text' class
 
-	* R/functions.R (print.text): new method
+        * R/functions.R (print.text): new method
 
 2015-07-01  Enrico Schumann  <es@enricoschumann.net>
 
-	* DESCRIPTION (Version): Version: 0.0-2
+        * DESCRIPTION (Version): Version: 0.0-2
 
-	* R/functions.R (trim): removed/commented benchmark code
+        * R/functions.R (trim): removed/commented benchmark code
 
 2015-05-08  Enrico Schumann  <es@enricoschumann.net>
 
-	* DESCRIPTION (Version): Version: 0.0-1
+        * DESCRIPTION (Version): Version: 0.0-1
 
-	* R/functions.R: initial version
-
+        * R/functions.R: initial version

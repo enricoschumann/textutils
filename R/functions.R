@@ -55,10 +55,12 @@ toHTML.data.frame <- function(x, ...,
     paste("<tr>", apply(ans, 1, paste, collapse = ""), "</tr>")
 }
 
-toLatex.data.frame <- function(object, ...,
+toLatex.data.frame <- function(object, 
                                row.names = FALSE,
+                               col.handlers = list(),
                                class.handlers = list(),
-                               col.handlers = list()) {
+                               eol = "\\\\",
+                               ...) {
 
     dfnames <- names(object)
     if (any(i <- names(col.handlers) %in% dfnames)) {
@@ -74,7 +76,7 @@ toLatex.data.frame <- function(object, ...,
         if (cl[j] %in% names(class.handlers))
             object[[j]] <- class.handlers[[ cl[j] ]](object[[j]])
     }
-    paste(do.call(function(...) paste(..., sep = " & "), object), "\\\\")
+    paste(do.call(function(...) paste(..., sep = " & "), object), eol)
 }
 
 trim <- function(s, leading = TRUE, trailing = TRUE, perl = TRUE, ...) {
