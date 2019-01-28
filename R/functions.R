@@ -193,6 +193,66 @@ btable <- function(x, unit = "cm", before = "", after = "",
            after)
 }
 
+.map <- function (x, min = 0, max = 1,
+                    omin = min(x), omax = max(x)) {
+    new.range <- max - min
+    old.range <- omax - omin
+    (new.range * x + min * omax - max * omin)/old.range
+}
+
+
+dctable <- function(x,
+                    unitlength = "1 cm",
+                    width = 5,
+                    y.offset = 0.07,
+                    circle.size = 0.1,
+                    xlim,
+                    na.rm = FALSE) {
+
+    if (missing(xlim))
+        xlim <- range(x, na.rm = na.rm)
+    pic <-
+"\\begin{picture}(%width%,0)
+\\put (%lstart%, %y.offset%) {\\color{gray!90}\\line(1, 0){%d%}}
+\\put (    %x1%, %y.offset%) {\\color{gray!50}\\circle*{%circle.size%}}
+\\put (    %x2%, %y.offset%) {\\color{gray!110}\\circle*{%circle.size%}}
+\\end{picture}
+"
+
+    p <- character(nrow(x))
+    for (i in seq_len(nrow(x))) {
+        if (any(is.na(x[i, ])))
+            next
+        
+        d <- diff(x[i, ])
+        p.i <- pic
+        p.i <- fill_in(pic,
+                       width = width,
+                       y.offset = y.offset,
+                       circle.size = circle.size,
+                       x1 = .map(x[i, 1], 0, width,
+                                 xlim[1], xlim[2]),
+                       x2 = .map(x[i, 2], 0, width,
+                                 xlim[1], xlim[2]),
+                       d  = .map(abs(d), 0, width,
+                                 xlim[1], xlim[2]),
+                       lstart =
+                            .map(min(x[i, ]), 0, width,
+                                xlim[1], xlim[2]),
+                       delim = c("%", "%"))
+        p[i] <- p.i
+    }
+    
+    p
+}
+
+
+
+
+
+
+
+
 HTMLencode <- function(x) {
     ii <- seq.int(1, length(.html_entities), 2)
     Encoding(x) <- "UTF-8"

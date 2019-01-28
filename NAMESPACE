@@ -5,6 +5,7 @@ export(
     TeXencode,
     TeXunits,
     btable,
+    dctable,
     fill_in,
     latexrule,
     rmrp,
