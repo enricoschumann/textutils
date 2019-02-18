@@ -2544,3 +2544,27 @@ fill_in <- function(s, ..., delim = c("{", "}"), replace.NA = TRUE) {
     }
     s
 }
+
+here <- function(s, drop = TRUE, guess.type = TRUE,
+                 sep = NULL, header = TRUE,
+                 stringsAsFactors = FALSE,
+                 trim = TRUE, ...) {
+    ans <- readLines(textConnection(s))
+    
+    if (drop && ans[len <- length(ans)] == "")
+        ans <- ans[-len]
+    if (drop && ans[1L] == "")
+        ans <- ans[-1L]
+
+    if (is.null(sep) && guess.type)
+        ans <- type.convert(ans, as.is = TRUE)
+    else {
+        ans <- read.table(text = ans,
+                          header = header, sep = sep,
+                          stringsAsFactors = stringsAsFactors,
+                          strip.white = trim,
+                          colClasses = if (guess.type)
+                                NA else "character", ...)
+    }
+    ans
+}

@@ -7,6 +7,7 @@ export(
     btable,
     dctable,
     fill_in,
+    here,
     latexrule,
     rmrp,
     spaces,

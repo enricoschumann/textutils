@@ -1,3 +1,8 @@
+2019-02-18  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (here): add function (moved
+	from package 'esutils')
+
 2019-01-18  Enrico Schumann  <es@enricoschumann.net>
 
 	* R/functions.R (dctable): add function (still
