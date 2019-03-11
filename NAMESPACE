@@ -25,4 +25,7 @@ S3method(toLatex, data.frame)
 S3method(toText, default)
 
 importFrom("utils",
-           "capture.output", "toLatex")
+           "capture.output",
+           "read.table", 
+           "toLatex",
+           "type.convert")
