@@ -1,4 +1,4 @@
-\name{HTMLdecode}
+\name{HTMLencode}
 \alias{HTMLdecode}
 \alias{HTMLencode}
 \title{
@@ -13,11 +13,20 @@ HTMLencode(x)
 }
 \arguments{
   \item{x}{
-    character
+   a string (character vector of length one)
 }
 }
 \details{
-  Decodes to \acronym{UTF}-8.
+
+  \code{HTMLdecode} replaces \acronym{HTML}5 named
+  entities (seeReferences) with \acronym{UTF}-8.
+
+  \code{HTMLencode} replaces \acronym{UTF}-8-encoded
+  substrings with \acronym{HTML}5 named entities (if
+  available). Note that a semicolon \sQuote{\code{;}}
+  will not be replaced by the entity
+  \sQuote{\code{&semi;}}.
+
 }
 \value{
 character
@@ -28,10 +37,13 @@ character
 \author{
   Enrico Schumann
 }
-%% \seealso{
-%%   URL
-%% }
+\seealso{
+  \code{\link{TeXencode}}
+}
 \examples{
-HTMLdecode(c("Max &#38; Moritz",
-             "4 &lt; 9"))
+HTMLdecode(c("Max &amp; Moritz", "4 &lt; 9"))
+## [1] "Max & Moritz" "4 < 9"
+
+HTMLencode(c("Max & Moritz", "4 < 9"))
+## [1] "Max &amp; Moritz" "4 &LT; 9"
 }

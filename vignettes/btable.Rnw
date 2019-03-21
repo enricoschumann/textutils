@@ -62,6 +62,19 @@ cat(btable(x, before = paste(1:5, "&"), after= "\\\\\n"))
 \end{tabular}
 
 
+\section{dctable}
+
+<<>>=
+x <- array(1:6, dim = c(3,2))
+@ 
+
+\begin{tabular}{ll}
+<<echo=false, results=tex>>=
+cat(dctable(x))
+@ 
+
+\end{tabular}
+
 %% \section{latexrule}
 
 
