@@ -48,3 +48,20 @@ test.toHTML <- function() {
            class.handlers = list(numeric = function(x) round(x/1000000)))
 
 }
+
+test.HTMLencode <- function() {
+    checkEquals(HTMLencode("test"), "test")
+    checkEquals(HTMLencode("<"),    "&LT;")
+    checkEquals(HTMLencode("&"),    "&amp;")
+    checkEquals(HTMLencode("&&"),   "&amp;&amp;")
+    checkEquals(HTMLencode("&amp ;"), "&amp;amp ;")
+
+    checkEquals(HTMLencode(";"),    ";")
+    checkEquals(HTMLencode("test &amp;"), "test &amp;")
+}
+
+test.HTMLdecode <- function() {
+    checkEquals(HTMLdecode("&amp;"), "&")
+    checkEquals(HTMLdecode("&semi;"), ";")
+    checkEquals(HTMLdecode("&semi;;"), ";;")
+}

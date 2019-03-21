@@ -1,3 +1,8 @@
+2019-03-21  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (HTMLencode): fix regular
+	expression (reported by Jacqueline Nolis)
+
 2019-02-18  Enrico Schumann  <es@enricoschumann.net>
 
 	* R/functions.R (here): add function (moved

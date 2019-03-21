@@ -255,9 +255,31 @@ dctable <- function(x,
 
 HTMLencode <- function(x) {
     ii <- seq.int(1, length(.html_entities), 2)
+    entities <- list(char = .html_entities[ii + 1],
+                     ent  = .html_entities[ii])
+    nd <- !duplicated(entities[["char"]])
+    entities[["char"]] <- entities[["char"]][nd]
+    entities[["ent"]]  <- entities[["ent"]][nd]
     Encoding(x) <- "UTF-8"
-    for (i in ii)
-        x <- gsub(.html_entities[i+1], .html_entities[i], x)
+    for (i in seq_len(length(entities[["char"]])))
+        if (entities[["char"]][i] == "&")
+            x <- gsub("&(?![a-zA-Z]+;)",
+                      "&amp;",
+                      x,
+                      perl = TRUE)
+        else if (entities[["char"]][i] == ";")            
+            ## FIXME: PCRE does not allow backward
+            ## assertions with variable length
+            ## x <- gsub("(?<!&[a-zA-Z]+);",
+            ##           "&semi;",
+            ##           x,
+            ##           perl = TRUE)
+            next
+        else
+            x <- gsub(entities[["char"]][i],
+                      entities[["ent"]][i],
+                      x,
+                      fixed = TRUE)
     x
 }
 
@@ -265,13 +287,13 @@ HTMLdecode <- function(x) {
     ii <- seq.int(1, length(.html_entities), 2)
     Encoding(x) <- "UTF-8"
     for (i in ii)
-        x <- gsub(.html_entities[i], .html_entities[i+1], x)
+        x <- gsub(.html_entities[i], .html_entities[i+1], x, fixed = TRUE)
     x
 }
 
 ## https://www.w3.org/TR/html5/syntax.html#named-character-references
 .html_entities <- c(
-  "&#38;", "&",
+  ## "&#38;", "&",
   ##
   "&Aacute;","\u00C1",
   "&Aacute","\u00C1",
