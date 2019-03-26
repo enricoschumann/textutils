@@ -7,36 +7,39 @@
   Create a LaTeX-table.
 }
 \usage{
-dctable(x, unit = "cm", before = "", after = "", raise = "0.2ex",
-       height = "1ex", ...)
+dctable(x, unitlength = "1 cm", width = 5,
+        y.offset = 0.07, circle.size = 0.1, xlim,
+        na.rm = FALSE)
 }
 \arguments{
   \item{x}{
     numeric: the numbers for which the barplot is to be created
 }
-  \item{unit}{
-    character: a valid TeX unit
-}
-  \item{before}{
+  \item{unitlength}{
     character
 }
-  \item{after}{
+  \item{width}{
+    numeric
+}
+  \item{y.offset}{
+    numeric
+}
+  \item{circle.size}{
+    numeric
+}
+  \item{xlim}{
     character
 }
-  \item{raise}{
-    character
-}
-  \item{height}{
-    character
-}
-  \item{\dots}{
-    more arguments
+  \item{na.rm}{
+    logical
 }
 }
 \details{
 
-  Creates a barplot table.
+  Creates a dotchart table.
 
+  This function is currently very experimental.
+  
 }
 \value{
   character
