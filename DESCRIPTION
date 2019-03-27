@@ -2,7 +2,7 @@ Package: textutils
 Type: Package
 Title: Utilities for Handling Strings and Text
 Version: 0.1-11
-Date: 2019-03-21
+Date: 2019-03-27
 Imports: utils
 Maintainer: Enrico Schumann <es@enricoschumann.net>
 Authors@R: person("Enrico", "Schumann",

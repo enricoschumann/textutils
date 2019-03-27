@@ -65,21 +65,22 @@ cat(btable(x, before = paste(1:5, "&"), after= "\\\\\n"))
 \section{dctable}
 
 <<>>=
-x <- array(1:6, dim = c(3,2))
+x <- array(1:6, dim = c(3, 2))
 @ 
 
 \begin{tabular}{ll}
 <<echo=false, results=tex>>=
-cat(dctable(x))
+cat(paste(dctable(x, circle.size = 1), "\\\\\n"))
 @ 
 
 \end{tabular}
 
 %% \section{latexrule}
 
-
 \newpage
+
 \appendix
+
 <<results=tex>>=
 toLatex(sessionInfo())
 @ 
