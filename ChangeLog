@@ -1,3 +1,9 @@
+2019-03-27  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (HTMLencode): new argument
+	'use.iconv': if TRUE, use 'iconv' to convert
+	input to UTF-8 encoded string
+
 2019-03-21  Enrico Schumann  <es@enricoschumann.net>
 
 	* R/functions.R (HTMLencode): fix regular

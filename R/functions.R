@@ -252,15 +252,15 @@ dctable <- function(x,
 
 
 
-
-HTMLencode <- function(x) {
+HTMLencode <- function(x, use.iconv = FALSE) {
     ii <- seq.int(1, length(.html_entities), 2)
     entities <- list(char = .html_entities[ii + 1],
                      ent  = .html_entities[ii])
     nd <- !duplicated(entities[["char"]])
     entities[["char"]] <- entities[["char"]][nd]
     entities[["ent"]]  <- entities[["ent"]][nd]
-    Encoding(x) <- "UTF-8"
+    if (use.iconv)
+        iconv(x, from = "", to = "UTF-8")
     for (i in seq_len(length(entities[["char"]])))
         if (entities[["char"]][i] == "&")
             x <- gsub("&(?![a-zA-Z]+;)",
@@ -285,7 +285,6 @@ HTMLencode <- function(x) {
 
 HTMLdecode <- function(x) {
     ii <- seq.int(1, length(.html_entities), 2)
-    Encoding(x) <- "UTF-8"
     for (i in ii)
         x <- gsub(.html_entities[i], .html_entities[i+1], x, fixed = TRUE)
     x
