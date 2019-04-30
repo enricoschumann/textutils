@@ -4,7 +4,7 @@
   Here Documents
 }
 \description{
-  Read lines and convert into appropriate vector.
+  Read lines and convert into appropriate vector or data frame.
 }
 \usage{
 here(s, drop = TRUE, guess.type = TRUE, sep = NULL, header = TRUE,
@@ -37,13 +37,32 @@ here(s, drop = TRUE, guess.type = TRUE, sep = NULL, header = TRUE,
 }
 }
 \details{
+
   Experimental. (Notably, the function's name may change.)
+
+  The function reads a (typically multi-line) string and treats each
+  line as one element of a vector or, if sep is specified, a
+  \code{data.frame}.
+
+  If \code{sep} is not specified, \code{here} calls
+  \code{\link[utils]{type.convert}} on the input \code{s}. 
+
+  If \code{sep} is specified, the input \code{s} is fed to
+  \code{\link[utils]{read.table}}. Additional arguments may be passed
+  through \dots.
+  
 }
 \value{
-  A vector.
+  a vector or, if \code{sep} is specified, a \code{\link{data.frame}}
 }
 \references{
+
   \url{http://rosettacode.org/wiki/Here_document}
+
+  (note that \R supports for multi-line strings, so in a way it has
+  built-in support for here documents as defined on
+  that website)
+  
 }
 \author{
   Enrico Schumann
@@ -67,4 +86,12 @@ Bob
 Carl
 David
 ")
+
+## data frame
+here("
+letter, number
+     x,      1
+     y,      2
+     z,      3",
+sep = ",")
 }
