@@ -9,17 +9,23 @@
 }
 \usage{
 HTMLdecode(x)
-HTMLencode(x)
+HTMLencode(x, use.iconv = FALSE)
 }
 \arguments{
   \item{x}{
    a string (character vector of length one)
-}
+ }
+  \item{use.iconv}{
+
+    logical. Should conversion via \code{\link{iconv}}
+    be tried from native encoding to \acronym{UTF}-8?
+
+ }
 }
 \details{
 
-  \code{HTMLdecode} replaces \acronym{HTML}5 named
-  entities (seeReferences) with \acronym{UTF}-8.
+  \code{HTMLdecode} replaces named entities (as defined
+  by \acronym{HTML}5; see References) with \acronym{UTF}-8.
 
   \code{HTMLencode} replaces \acronym{UTF}-8-encoded
   substrings with \acronym{HTML}5 named entities (if
