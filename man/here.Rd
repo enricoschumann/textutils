@@ -59,7 +59,7 @@ here(s, drop = TRUE, guess.type = TRUE, sep = NULL, header = TRUE,
 
   \url{http://rosettacode.org/wiki/Here_document}
 
-  (note that \R supports for multi-line strings, so in a way it has
+  (note that \R supports multi-line strings, so in a way it has
   built-in support for here documents as defined on
   that website)
   

@@ -51,11 +51,11 @@ toHTML.data.frame <- function(x, ...,
     ans <- rbind(paste0("<th>", c(if (row.names) "", colnames(x)), "</th>"),
                  cbind(if (row.names) paste0("<td>", row.names(x), "</td>"),
                        apply(x, 2, function(x) paste0("<td>", x, "</td>"))))
-    
+
     paste("<tr>", apply(ans, 1, paste, collapse = ""), "</tr>")
 }
 
-toLatex.data.frame <- function(object, 
+toLatex.data.frame <- function(object,
                                row.names = FALSE,
                                col.handlers = list(),
                                class.handlers = list(),
@@ -91,7 +91,7 @@ trim <- function(s, leading = TRUE, trailing = TRUE, perl = TRUE, ...) {
 rmrp <- function(s, pattern, ...) {
     i <- grep(pattern, s, ...)
     if (any(ii <- diff(i) == 1L))
-        s <- s[-i[which(c(FALSE, ii))]]    
+        s <- s[-i[which(c(FALSE, ii))]]
     s
 }
 
@@ -147,7 +147,7 @@ strexp <- function(s, after, width, fill = " ", at) {
     }
     ## if (is.character(at)) {}
     paste(substr(s, 1L, at - 1L), space,
-          substr(s, at, ns), sep = "")    
+          substr(s, at, ns), sep = "")
 }
 
 .spaces <- "                                                                                                                                                                                                        "
@@ -158,13 +158,14 @@ spaces <- function(n) {
 }
 
 
-valign <- function(s, align = "|", insert.at = "<>", replace = TRUE, fixed = TRUE) {
+valign <- function(s, align = "|", insert.at = "<>",
+                   replace = TRUE, fixed = TRUE) {
     pos <- regexpr(align, s, fixed = fixed)
     ns <- spaces(max(pos) - pos)
 
-    for (i in seq_along(s)) 
+    for (i in seq_along(s))
          s[i] <- sub(insert.at, ns[i], s[i], fixed = TRUE)
-    sub(align, "", s, fixed = TRUE)        
+    sub(align, "", s, fixed = TRUE)
 }
 
 
@@ -223,7 +224,7 @@ dctable <- function(x,
     for (i in seq_len(nrow(x))) {
         if (any(is.na(x[i, ])))
             next
-        
+
         d <- diff(x[i, ])
         p.i <- pic
         p.i <- fill_in(pic,
@@ -242,14 +243,9 @@ dctable <- function(x,
                        delim = c("%", "%"))
         p[i] <- p.i
     }
-    
+
     p
 }
-
-
-
-
-
 
 
 HTMLencode <- function(x, use.iconv = FALSE) {
@@ -267,7 +263,7 @@ HTMLencode <- function(x, use.iconv = FALSE) {
                       "&amp;",
                       x,
                       perl = TRUE)
-        else if (entities[["char"]][i] == ";")            
+        else if (entities[["char"]][i] == ";")
             ## FIXME: PCRE does not allow backward
             ## assertions with variable length
             ## x <- gsub("(?<!&[a-zA-Z]+);",
@@ -2540,7 +2536,7 @@ title_case <- function(s, strict = FALSE, ignore = NULL) {
             spl[[i]][do] <- tolower(spl[[i]][do])
         substr(spl[[i]][do],1,1) <- toupper(substr(spl[[i]][do],1,1))
     }
-    
+
     unlist(lapply(spl, paste0, collapse = " "),
            use.names = !is.null(names(s)))
 }
@@ -2570,8 +2566,9 @@ here <- function(s, drop = TRUE, guess.type = TRUE,
                  sep = NULL, header = TRUE,
                  stringsAsFactors = FALSE,
                  trim = TRUE, ...) {
-    ans <- readLines(textConnection(s))
-    
+    ans <- readLines(con <- textConnection(s))
+    close(con)
+
     if (drop && ans[len <- length(ans)] == "")
         ans <- ans[-len]
     if (drop && ans[1L] == "")
@@ -2585,7 +2582,7 @@ here <- function(s, drop = TRUE, guess.type = TRUE,
                           stringsAsFactors = stringsAsFactors,
                           strip.white = trim,
                           colClasses = if (guess.type)
-                                NA else "character", ...)
+                                           NA else "character", ...)
     }
     ans
 }

@@ -1,23 +1,31 @@
+2019-05-01  Enrico Schumann  <es@enricoschumann.net>
+
+        * DESCRIPTION (Version): 0.1-11
+
+        * R/functions.R (here): explicitly close text
+        connection (which otherwise would be
+        garbage-collected anyway)
+
 2019-03-27  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (HTMLencode): new argument
-	'use.iconv': if TRUE, use 'iconv' to convert
-	input to UTF-8 encoded string
+        * R/functions.R (HTMLencode): new argument
+        'use.iconv': if TRUE, use 'iconv' to convert
+        input to UTF-8 encoded string
 
 2019-03-21  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (HTMLencode): fix regular
-	expression (reported by Jacqueline Nolis)
+        * R/functions.R (HTMLencode): fix regular
+        expression (reported by Jacqueline Nolis)
 
 2019-02-18  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (here): add function (moved
-	from package 'esutils')
+        * R/functions.R (here): add function (moved
+        from package 'esutils')
 
 2019-01-18  Enrico Schumann  <es@enricoschumann.net>
 
-	* R/functions.R (dctable): add function (still
-	incomplete)
+        * R/functions.R (dctable): add function (still
+        incomplete)
 
 2018-12-14  Enrico Schumann  <es@enricoschumann.net>
 

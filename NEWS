@@ -1,7 +1,8 @@
-v0.1-11  (????-??-??; not yet released)
+v0.1-11  (2019-05-01)
 
   o fix 'HTMLencode' (thanks to Jacqueline Nolis for
-    reporting the error)
+    reporting the error); the function also gains
+    a new argument 'use.iconv'
 
   o new function 'here'
 
@@ -30,7 +31,7 @@ v0.1-6  (2016-12-16)
   o CRAN release
 
 v0.1-5  (2016-12-16)
-  
+
   o functions 'char2num' and 'expstr' are removed (for
     the latter, use 'strexp' instead)
 

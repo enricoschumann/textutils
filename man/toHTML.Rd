@@ -39,22 +39,22 @@ toHTML(x, ...)
 
   The \sQuote{semantics} of this function may differ from other
   implementations:
-  the function is expected to take arbitrary R object
+  the function is expected to take an arbitrary \R object
   and return an \acronym{HTML} snippet that can be
   placed in reports (i.e. in the same spirit as
   \code{\link{toLatex}}). By contrast, the purpose of
   \code{\link[tools]{toHTML}} in \pkg{tools} is to provide a whole
   \acronym{HTML} document.
 
-  In the \code{\link{data.frame}} method supports two
+  The \code{\link{data.frame}} method has two
   \code{handlers} arguments: these may store helper
   functions for formatting columns, either of a
   specific name (\code{col.handlers}) or of a specific
   class(\code{class.handlers}). The functions in
   \code{col.handlers} are applied first; and the
   affected columns are not touched by \code{class.handlers}.
-  See examples.
-  
+  See Examples.
+
 }
 \value{
   a character vector

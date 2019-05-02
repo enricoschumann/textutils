@@ -45,7 +45,9 @@ dctable(x, unitlength = "1 cm", width = 5,
   character
 }
 \references{
-  Cleveland?
+
+  Cleveland, W. S. (1985) \emph{The Elements of Graphing Data.} Wadsworth.
+
 }
 \author{
   Enrico Schumann

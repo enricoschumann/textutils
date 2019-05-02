@@ -25,13 +25,18 @@ HTMLencode(x, use.iconv = FALSE)
 \details{
 
   \code{HTMLdecode} replaces named entities (as defined
-  by \acronym{HTML}5; see References) with \acronym{UTF}-8.
+  by \acronym{HTML}5; see References) with
+  \acronym{UTF}-8.
 
   \code{HTMLencode} replaces \acronym{UTF}-8-encoded
-  substrings with \acronym{HTML}5 named entities (if
-  available). Note that a semicolon \sQuote{\code{;}}
-  will not be replaced by the entity
-  \sQuote{\code{&semi;}}.
+  substrings with \acronym{HTML}5 named entities
+  (a.k.a.  \dQuote{named character references}).  A
+  semicolon \sQuote{\code{;}} will not be replaced by
+  the entity \sQuote{\code{&semi;}}.  Other than that,
+  however, \code{HTMLencode} is quite thorough in its
+  job: it will replace all characters for which named
+  entities exists, even \sQuote{\code{&comma;}} and or
+  \sQuote{\code{&quest;}}.
 
 }
 \value{

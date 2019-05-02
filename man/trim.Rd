@@ -21,12 +21,15 @@ trim(s, leading = TRUE, trailing = TRUE, perl = TRUE, \dots)
   \code{trim} removes leading and trailing space, which is defined
   through the (Perl) regular expression \code{\\s}.
 
+  The base package has a function \code{\link{trimws}} these days,
+  so you may not actually need the function (any more).
+  
 }
 \value{
   a character vector
 }
 \seealso{
-   \code{\link{gsub}}, \code{\link{strtrim}}
+   \code{\link{trimws}}, \code{\link{gsub}}, \code{\link{strtrim}}
 }
 \author{
   Enrico Schumann

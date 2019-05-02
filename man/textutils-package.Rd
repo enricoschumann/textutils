@@ -9,6 +9,7 @@
 \packageDescription{textutils}
 }
 \details{
+
   The package comprises a number of functions that help with
   manipulating character strings.
 
@@ -17,8 +18,10 @@
   
 }
 \author{
-\packageAuthor{textutils}
 
-Maintainer: \packageMaintainer{textutils}
+  \packageAuthor{textutils}
+
+  Maintainer: \packageMaintainer{textutils}
+
 }
-\keyword{ package }
+\keyword{package}

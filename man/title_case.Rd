@@ -3,7 +3,7 @@
 \title{
   Remove Leading and Trailing White Space
 }
-\description{  
+\description{
   Remove leading and/or trailing white space from character vectors.
 }
 \usage{
@@ -22,7 +22,7 @@ title_case(s, strict = FALSE, ignore = NULL)
 \details{
 
   Set string in title case.
-  
+
 }
 \value{
   a character vector
