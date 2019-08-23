@@ -18,9 +18,9 @@ http://enricoschumann.net. In an R session, just type:
                      repos = c('http://enricoschumann.net/R', getOption('repos')))
 
 For the latest development version, check out the Git
-repository and build it. In a shell (e.g. sh or bash):
+repository and build it. In a shell (e.g. `sh` or `bash`):
 
-    ## first time: cd to directory and ...
+    ## first time: cd to _parent_ directory and ...
     $ git clone https://github.com/enricoschumann/textutils
 
     ## ... build and install the package
@@ -31,7 +31,7 @@ repository and build it. In a shell (e.g. sh or bash):
     $ R CMD check textutils_<0.1-0>.tar.gz    ## adjust version number
 
 
-    ## update package: cd to package directory and ...
+    ## update package: cd to _package_ directory and ...
     $ git pull
     $ cd ..
-    $ R CMD build textutils  # build/INSTALL/check as above
+    $ R CMD build textutils  ## build/INSTALL/check as above

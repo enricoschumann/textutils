@@ -3,7 +3,7 @@
 \title{
   Remove Leading and Trailing White Space
 }
-\description{  
+\description{
   Remove leading and/or trailing white space from character vectors.
 }
 \usage{
@@ -23,7 +23,7 @@ trim(s, leading = TRUE, trailing = TRUE, perl = TRUE, \dots)
 
   The base package has a function \code{\link{trimws}} these days,
   so you may not actually need the function (any more).
-  
+
 }
 \value{
   a character vector

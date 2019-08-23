@@ -1,6 +1,11 @@
+2019-08-23  Enrico Schumann  <es@enricoschumann.net>
+
+        * DESCRIPTION (Imports): add tinytest,
+        remove RUnit
+
 2019-06-04  Enrico Schumann  <es@enricoschumann.net>
 
-	* DESCRIPTION (Suggests): add RUnit
+        * DESCRIPTION (Suggests): add RUnit
 
 2019-05-01  Enrico Schumann  <es@enricoschumann.net>
 
