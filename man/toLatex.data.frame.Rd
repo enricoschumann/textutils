@@ -27,8 +27,11 @@
     a list of named functions
 }
   \item{eol}{
-    character: the line ending
-}
+
+    character: the line ending; may be a vector of
+    length greater than one
+
+  }
   \item{\dots}{
     other arguments
 }
@@ -41,7 +44,7 @@
   with \code{col.handlers} and \code{class.handlers}.
 
   \code{col.handlers} take precedent over
-  \code{class.handlers}.  
+  \code{class.handlers}.
 }
 \value{
   character
@@ -50,7 +53,7 @@
 %%   %% ~put references to the literature/web site here ~
 %% }
 \author{
-  Enrico Schumann 
+  Enrico Schumann
 }
 %% \note{
 %% %%  ~~further notes~~
