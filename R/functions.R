@@ -2574,9 +2574,11 @@ here <- function(s, drop = TRUE, guess.type = TRUE,
     if (drop && ans[1L] == "")
         ans <- ans[-1L]
 
-    if (is.null(sep) && guess.type)
+    if (is.null(sep) && guess.type) {
+        if (trim)
+            ans <- trimws(ans)
         ans <- type.convert(ans, as.is = TRUE)
-    else {
+    } else {
         ans <- read.table(text = ans,
                           header = header, sep = sep,
                           stringsAsFactors = stringsAsFactors,

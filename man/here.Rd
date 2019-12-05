@@ -30,7 +30,7 @@ here(s, drop = TRUE, guess.type = TRUE, sep = NULL, header = TRUE,
     logical
 }
   \item{trim}{
-    logical
+    logical: trim whitespace?
 }
   \item{\dots}{
     named arguments to be passed to \code{\link[utils]{read.table}}

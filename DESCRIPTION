@@ -1,8 +1,8 @@
 Package: textutils
 Type: Package
 Title: Utilities for Handling Strings and Text
-Version: 0.2-0
-Date: 2019-08-23
+Version: 0.2-1
+Date: 2019-11-13
 Imports: utils
 Suggests: tinytest
 Maintainer: Enrico Schumann <es@enricoschumann.net>

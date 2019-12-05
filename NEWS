@@ -1,6 +1,7 @@
 v0.2-0  (2019-??-??; not yet released)
 
-  o 
+  o fix 'here': argument 'trim' was ignored for
+    character vectors
 
 v0.1-11  (2019-05-01)
 
