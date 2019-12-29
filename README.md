@@ -1,7 +1,13 @@
 # textutils
 
-Utilities for handling character vectors that store human-readable
-text (either plain or with markup, such as HTML).
+Utilities for handling character vectors that store
+human-readable text (either plain or with markup, such
+as HTML or LaTeX). The package provides, in particular,
+functions that help with the preparation of plain-text
+reports (e.g. for expanding and aligning strings that
+form the lines of such reports); the package also
+provides generic functions for transforming R objects
+to HTML and to plain text.
 
 [ [More] ](http://enricoschumann.net/R/packages/textutils/)
 
@@ -25,10 +31,10 @@ repository and build it. In a shell (e.g. `sh` or `bash`):
 
     ## ... build and install the package
     $ R CMD build textutils
-    $ R CMD INSTALL textutils_<0.1-0>.tar.gz  ## adjust version number
+    $ R CMD INSTALL textutils_<0.2-0>.tar.gz  ## adjust version number
 
     ## optionally check
-    $ R CMD check textutils_<0.1-0>.tar.gz    ## adjust version number
+    $ R CMD check textutils_<0.2-0>.tar.gz    ## adjust version number
 
 
     ## update package: cd to _package_ directory and ...
