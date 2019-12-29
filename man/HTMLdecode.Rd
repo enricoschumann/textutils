@@ -44,6 +44,8 @@ character
 }
 \references{
   \url{https://www.w3.org/TR/html5/syntax.html#named-character-references}
+
+  \url{https://html.spec.whatwg.org/multipage/syntax.html#character-references}
 }
 \author{
   Enrico Schumann
