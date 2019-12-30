@@ -8,25 +8,41 @@
   Decode and encode HTML entities.
 }
 \usage{
-HTMLdecode(x)
-HTMLencode(x, use.iconv = FALSE)
+HTMLdecode(x, named = TRUE, hex = TRUE, decimal = TRUE)
+HTMLencode(x, use.iconv = FALSE, encode.only = NULL)
 }
 \arguments{
+
   \item{x}{
-   a string (character vector of length one)
- }
+    a string (character vector of length one)
+  }
   \item{use.iconv}{
 
     logical. Should conversion via \code{\link{iconv}}
     be tried from native encoding to \acronym{UTF}-8?
 
- }
+  }
+  \item{named}{
+    logical: replace named character references?
+  }
+  \item{hex}{
+    logical: replace hexadecimal character references?
+  }
+  \item{decimal}{
+    logical: replace decimal character references?
+  }
+  \item{encode.only}{
+    character
+  }
+
 }
 \details{
 
-  \code{HTMLdecode} replaces named entities (as defined
-  by \acronym{HTML}5; see References) with
-  \acronym{UTF}-8.
+  \code{HTMLdecode} replaces named, hexadecimal and
+  decimal character references as defined by
+  \acronym{HTML}5 (see References) with characters. The
+  resulting character vector is marked as
+  \acronym{UTF}-8 (see \code{\link{Encoding}}).
 
   \code{HTMLencode} replaces \acronym{UTF}-8-encoded
   substrings with \acronym{HTML}5 named entities
@@ -36,7 +52,8 @@ HTMLencode(x, use.iconv = FALSE)
   however, \code{HTMLencode} is quite thorough in its
   job: it will replace all characters for which named
   entities exists, even \sQuote{\code{&comma;}} and or
-  \sQuote{\code{&quest;}}.
+  \sQuote{\code{&quest;}}.  You can restrict the
+  characters to be replaced by specifying \code{encode.only}.
 
 }
 \value{
@@ -59,4 +76,9 @@ HTMLdecode(c("Max &amp; Moritz", "4 &lt; 9"))
 
 HTMLencode(c("Max & Moritz", "4 < 9"))
 ## [1] "Max &amp; Moritz" "4 &LT; 9"
+
+HTMLencode("Max, Moritz & more")
+## [1] "Max&comma; Moritz &amp; more"
+HTMLencode("Max, Moritz & more", encode.only = c("&", "<", ">"))
+## [1] "Max, Moritz &amp; more"
 }

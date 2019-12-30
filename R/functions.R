@@ -243,15 +243,19 @@ dctable <- function(x,
                        delim = c("%", "%"))
         p[i] <- p.i
     }
-
     p
 }
 
 
-HTMLencode <- function(x, use.iconv = FALSE) {
+HTMLencode <- function(x, use.iconv = FALSE, encode.only = NULL) {
     ii <- seq.int(1, length(.html_entities), 2)
-    entities <- list(char = .html_entities[ii + 1],
-                     ent  = .html_entities[ii])
+    if (!is.null(encode.only)) {
+        m <- match(encode.only, .html_entities[ii+1], nomatch = 0L)
+        entities <- list(char = encode.only[m > 0L],
+                         ent  = .html_entities[ii][m])
+    } else
+        entities <- list(char = .html_entities[ii + 1L],
+                         ent  = .html_entities[ii])
     nd <- !duplicated(entities[["char"]])
     entities[["char"]] <- entities[["char"]][nd]
     entities[["ent"]]  <- entities[["ent"]][nd]
@@ -279,17 +283,45 @@ HTMLencode <- function(x, use.iconv = FALSE) {
     x
 }
 
-HTMLdecode <- function(x) {
-    ii <- seq.int(1, length(.html_entities), 2)
-    for (i in ii)
-        x <- gsub(.html_entities[i], .html_entities[i+1], x, fixed = TRUE)
+HTMLdecode <- function(x, named = TRUE, hex = TRUE, decimal = TRUE) {
+    if (named) {
+        ii <- seq.int(1, length(.html_entities), 2)
+        for (i in ii)
+            x <- gsub(.html_entities[i], .html_entities[i + 1L], x, fixed = TRUE)
+    }
+    if (hex)
+        x <- .replace_num_char_ref(x, hex = TRUE)
+    if (decimal)
+        x <- .replace_num_char_ref(x, hex = FALSE)
     x
 }
 
+.replace_num_char_ref <- function(s, hex = TRUE) {
+    p <- if (hex) "&#x[0-9a-f]+;" else "&#[0-9a-f]+;"
+    m <- gregexpr(p, s, perl = TRUE, ignore.case = TRUE)
+    ii <- which(unlist(lapply(m, function(x) x[[1L]]) > 0))
+
+    repl <- vector("list", length(ii))
+    for (i in ii) {
+        temp <- substring(s[i],
+                          m[[i]] + if (hex) 3L else 2L,               ## skip '&#x?'
+                          m[[i]] + attr(m[[i]], "match.length") - 2L) ## skip ';'
+        for (t in temp)
+            if (hex)
+                temp[t == temp] <- intToUtf8(strtoi(t, 16L))
+            else
+                temp[t == temp] <- intToUtf8(t)
+
+        repl[[which(i == ii)]] <- temp
+    }
+    regmatches(s[ii], m[ii]) <- repl
+    Encoding(s) <- "UTF-8"
+    s
+}
+
+
 ## https://www.w3.org/TR/html5/syntax.html#named-character-references
 .html_entities <- c(
-  ## "&#38;", "&",
-  ##
   "&Aacute;","\u00C1",
   "&Aacute","\u00C1",
   "&aacute;","\u00E1",

@@ -42,21 +42,3 @@ toHTML(df,
 
 
 
-##  -----------------------
-
-expect_equal(HTMLencode("test"), "test")
-expect_equal(HTMLencode("<"),    "&LT;")
-expect_equal(HTMLencode("&"),    "&amp;")
-expect_equal(HTMLencode("&&"),   "&amp;&amp;")
-expect_equal(HTMLencode("&amp ;"), "&amp;amp ;")
-
-expect_equal(HTMLencode(";"),    ";")
-expect_equal(HTMLencode("test &amp;"), "test &amp;")
-
-
-
-##  -----------------------
-
-expect_equal(HTMLdecode("&amp;"), "&")
-expect_equal(HTMLdecode("&semi;"), ";")
-expect_equal(HTMLdecode("&semi;;"), ";;")
