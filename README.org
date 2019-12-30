@@ -1,0 +1,164 @@
+* textutils
+
+Utilities for handling character vectors that store
+human-readable text (either plain or with markup, such
+as HTML or LaTeX). The package provides, in particular,
+functions that help with the preparation of plain-text
+reports (e.g. for expanding and aligning strings that
+form the lines of such reports); the package also
+provides generic functions for transforming R objects
+to HTML and to plain text.
+
+** Installing the package
+
+   The latest build of the package is always available from
+   [[http://enricoschumann.net/R/packages/textutils/]]. A
+   stable version is available from [[https://cran.r-project.org/package=textutils][CRAN]].
+
+   To install the package from within an R session, type:
+#+BEGIN_SRC R :eval never :export code
+install.packages("textutils")  ## CRAN version
+install.packages("textutils",  ## development version
+                 repos = c("http://enricoschumann.net/R",
+                           getOption("repos")))
+#+END_SRC
+
+
+** Examples
+
+#+BEGIN_SRC R :results none :exports code :session **R**
+library("textutils")
+#+END_SRC
+
+*** Convert to HTML/LaTeX
+
+#+BEGIN_SRC R :results output :exports both :session **R**
+df <- data.frame(x = runif(10)*10000000, y = rnorm(10)*20000000)
+df
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+         x           y
+1  9512345  24160008.7
+2  8151640   7790504.2
+3  4461368 -14962620.5
+4  3495500   5616990.7
+5  4627634  22343794.2
+6  8022588   5421546.9
+7  2022755 -23600810.0
+8  9068426   -527064.4
+9  4568450 -34791025.2
+10 9793989 -14668584.4
+#+end_example
+
+#+BEGIN_SRC R :results raw :exports both :session **R**
+toHTML(df,
+       col.handlers = list(x = function(x) round(x, -3)),
+       class.handlers = list(numeric = function(x) round(x/1000000)))
+#+END_SRC
+
+#+RESULTS:
+<tr> <th>x</th><th>y</th> </tr>
+<tr> <td>9512000</td><td>24</td> </tr>
+<tr> <td>8152000</td><td>8</td> </tr>
+<tr> <td>4461000</td><td>-15</td> </tr>
+<tr> <td>3495000</td><td>6</td> </tr>
+<tr> <td>4628000</td><td>22</td> </tr>
+<tr> <td>8023000</td><td>5</td> </tr>
+<tr> <td>2023000</td><td>-24</td> </tr>
+<tr> <td>9068000</td><td>-1</td> </tr>
+<tr> <td>4568000</td><td>-35</td> </tr>
+<tr> <td>9794000</td><td>-15</td> </tr>
+
+
+#+BEGIN_SRC R :results raw :exports both :session **R**
+toLatex(df,
+        col.handlers = list(x = function(x) round(x, -3)),
+        class.handlers = list(numeric = function(x) round(x/1000000)))
+#+END_SRC
+
+#+RESULTS:
+9512000 & 24 \\
+8152000 & 8 \\
+4461000 & -15 \\
+3495000 & 6 \\
+4628000 & 22 \\
+8023000 & 5 \\
+2023000 & -24 \\
+9068000 & -1 \\
+4568000 & -35 \\
+9794000 & -15 \\
+
+
+
+*** HTML encoding/decoding
+
+#+BEGIN_SRC R :results output :exports both :session **R**
+HTMLencode("Lenny & Carl")
+#+END_SRC
+
+#+RESULTS:
+: [1] "Lenny &amp; Carl"
+
+#+BEGIN_SRC R :results output :exports both :session **R**
+HTMLdecode("Lenny &amp; Carl")
+HTMLdecode("Lenny &#38; Carl")
+HTMLdecode("Lenny &#x26; Carl")
+#+END_SRC
+
+#+RESULTS:
+: [1] "Lenny & Carl"
+: [1] "Lenny & Carl"
+: [1] "Lenny & Carl"
+
+
+*** Other tools
+
+#+BEGIN_SRC R :results output :exports both :session **R**
+TeXunits("1 cm", c("in", "cm"))
+#+END_SRC
+
+#+RESULTS:
+:        in        cm
+: 0.3937008 1.0000000
+
+
+#+BEGIN_SRC R :results output :exports both :session **R**
+template <- "{1} meets {2}"
+fill_in(template, "Lenny", "Carl")
+
+template <- "{one} meets {other}"
+fill_in(template, one = "Lenny", other = "Carl")
+#+END_SRC
+
+#+RESULTS:
+: [1] "Lenny meets Carl"
+: [1] "Lenny meets Carl"
+
+
+#+BEGIN_SRC R :results output :exports both :session **R**
+here("
+Lenny
+Carl
+Moe
+")
+#+END_SRC
+
+#+RESULTS:
+: [1] "Lenny" "Carl"  "Moe"
+
+#+BEGIN_SRC R :results output :exports both :session **R**
+here("
+Name, Score
+Lenny,   1
+Carl,    2
+Moe,    -5
+", sep = ",")
+#+END_SRC
+
+#+RESULTS:
+:    Name Score
+: 1 Lenny     1
+: 2  Carl     2
+: 3   Moe    -5
