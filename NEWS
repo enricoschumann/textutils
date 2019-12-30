@@ -1,7 +1,14 @@
-v0.2-0  (2019-??-??; not yet released)
+v0.2-0  (2019-12-30; yet released)
 
   o fix 'here': argument 'trim' was ignored for
     character vectors
+
+  o function 'HTMLdecode' now also decode decimal and
+    hexadecimal character references, controlled by new
+    arguments 'named', 'hex' and 'decimal'
+
+  o function 'HTMLencode' gains an argument
+    'encode.only', to restrict characters to be encoded
 
 v0.1-11  (2019-05-01)
 

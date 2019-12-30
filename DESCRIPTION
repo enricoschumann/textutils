@@ -14,9 +14,9 @@ Description: Utilities for handling character vectors
   that store human-readable text (either plain or with
   markup, such as HTML or LaTeX). The package provides,
   in particular, functions that help with the
-  preparation of plain-text reports (e.g. for expanding
+  preparation of plain-text reports, e.g. for expanding
   and aligning strings that form the lines of such
-  reports); the package also provides generic functions for
+  reports. The package also provides generic functions for
   transforming R objects to HTML and to plain text.
 License: GPL-3
 URL: http://enricoschumann.net/R/packages/textutils/,
