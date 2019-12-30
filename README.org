@@ -59,6 +59,7 @@ toHTML(df,
 #+END_SRC
 
 #+RESULTS:
+#+begin_example
 <tr> <th>x</th><th>y</th> </tr>
 <tr> <td>9512000</td><td>24</td> </tr>
 <tr> <td>8152000</td><td>8</td> </tr>
@@ -70,7 +71,7 @@ toHTML(df,
 <tr> <td>9068000</td><td>-1</td> </tr>
 <tr> <td>4568000</td><td>-35</td> </tr>
 <tr> <td>9794000</td><td>-15</td> </tr>
-
+#+end_example
 
 #+BEGIN_SRC R :results raw :exports both :session **R**
 toLatex(df,
@@ -79,6 +80,7 @@ toLatex(df,
 #+END_SRC
 
 #+RESULTS:
+#+begin_example
 9512000 & 24 \\
 8152000 & 8 \\
 4461000 & -15 \\
@@ -89,7 +91,7 @@ toLatex(df,
 9068000 & -1 \\
 4568000 & -35 \\
 9794000 & -15 \\
-
+#+end_example
 
 
 *** HTML encoding/decoding
@@ -115,6 +117,8 @@ HTMLdecode("Lenny &#x26; Carl")
 
 *** Other tools
 
+**** TeXUnits
+
 #+BEGIN_SRC R :results output :exports both :session **R**
 TeXunits("1 cm", c("in", "cm"))
 #+END_SRC
@@ -123,6 +127,8 @@ TeXunits("1 cm", c("in", "cm"))
 :        in        cm
 : 0.3937008 1.0000000
 
+
+**** fill_in
 
 #+BEGIN_SRC R :results output :exports both :session **R**
 template <- "{1} meets {2}"
@@ -136,6 +142,7 @@ fill_in(template, one = "Lenny", other = "Carl")
 : [1] "Lenny meets Carl"
 : [1] "Lenny meets Carl"
 
+**** here
 
 #+BEGIN_SRC R :results output :exports both :session **R**
 here("
