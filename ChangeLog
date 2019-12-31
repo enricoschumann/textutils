@@ -1,5 +1,7 @@
 2019-12-30  Enrico Schumann  <es@enricoschumann.net>
 
+        * DESCRIPTION (Version): 0.2-0
+
         * R/functions.R (HTMLdecode): also decode
         decimal and hexadecimal character references,
         controlled by new arguments 'named', 'hex' and
