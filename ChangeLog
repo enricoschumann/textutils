@@ -1,3 +1,8 @@
+2020-07-30  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (toHTML.data.frame): add
+	arguments for adding style attributes
+
 2019-12-30  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.2-0

@@ -33,7 +33,11 @@ toHTML.text <- function(x, ...){
 toHTML.data.frame <- function(x, ...,
                               row.names = FALSE,
                               class.handlers = list(),
-                              col.handlers = list()) {
+                              col.handlers = list(),
+                              row.styles = NULL,
+                              col.styles = NULL,
+                              cell.styles = NULL
+                              ) {
 
     dfnames <- names(x)
     if (any(i <- names(col.handlers) %in% dfnames)) {
@@ -52,7 +56,27 @@ toHTML.data.frame <- function(x, ...,
                  cbind(if (row.names) paste0("<td>", row.names(x), "</td>"),
                        apply(x, 2, function(x) paste0("<td>", x, "</td>"))))
 
-    paste("<tr>", apply(ans, 1, paste, collapse = ""), "</tr>")
+    if (!is.null(col.styles)) {
+        if (length(col.styles) == 1L)
+            col.styles <- rep(col.styles, ncol(ans))
+        for (i in seq_along(col.styles)) {
+            if (is.na(col.styles[i]) || col.styles[i] == "")
+                next
+            sub(">", paste0(" style = \"", col.styles[i], "\">"), ans[, i])
+        }
+            
+    }
+    if (!is.null(row.styles)) {
+        if (length(row.styles) == 1L)
+            row.styles <- rep(row.styles, nrow(ans))
+        if (length(row.styles) == nrow(ans) - 1L)
+            row.styles <- c(NA, row.styles)
+        tmp <- rep("", nrow(ans))
+        tmp[!is.na(row.styles) & row.styles != ""] <-
+            paste0(" style=\"", row.styles[!is.na(row.styles) & row.styles != ""], "\"")
+        tr <- paste0("<tr", tmp, ">")
+    }
+    paste0(tr, apply(ans, 1, paste, collapse = ""), "</tr>")
 }
 
 toLatex.data.frame <- function(object,
