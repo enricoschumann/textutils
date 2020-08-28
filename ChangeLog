@@ -1,3 +1,14 @@
+2020-08-24  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (toHTML.data.frame): fix
+	handling of one-row data frames
+	(toHTML.data.frame): new argument 'col.names',
+	with default TRUE. If FALSE, column names of
+	data frame are ignored
+	(toHTML.data.frame): 'row.names' may now be
+	either logical (as before) or a string, which
+	is then used as column name
+
 2019-12-30  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.2-0
