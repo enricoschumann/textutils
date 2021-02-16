@@ -10,7 +10,9 @@
 \usage{
 toHTML(x, ...)
 
-\method{toHTML}{data.frame}(x, \dots, row.names = FALSE,
+\method{toHTML}{data.frame}(x, \dots,
+                            row.names = FALSE,
+                            col.names = TRUE,
                             class.handlers = list(),
                             col.handlers = list())
 }
@@ -22,6 +24,9 @@ toHTML(x, ...)
     arguments passed to methods
   }
   \item{row.names}{
+    logical
+  }
+  \item{col.names}{
     logical
   }
   \item{class.handlers}{
