@@ -48,3 +48,12 @@ expect_equal(HTMLdecode("&#x99;", hex = FALSE),     "&#x99;")
 ## case x/X
 expect_equal(HTMLdecode("&#x26;"), "&")
 expect_equal(HTMLdecode("&#X26;"), "&")
+
+
+## https://github.com/enricoschumann/textutils/issues/3
+expect_equal(HTMLdecode("I'm &notit; I tell you"),
+             "I'm \u00ACit; I tell you")
+expect_equal(HTMLdecode("I'm &notin; I tell you"),
+             "I'm \u2209 I tell you")
+
+

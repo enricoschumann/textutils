@@ -1553,7 +1553,6 @@ HTMLdecode <- function(x, named = TRUE, hex = TRUE, decimal = TRUE) {
   "&nopf;","\uD835\uDD5F",
   "&Not;","\u2AEC",
   "&not;","\u00AC",
-  "&not","\u00AC",
   "&NotCongruent;","\u2262",
   "&NotCupCap;","\u226D",
   "&NotDoubleVerticalBar;","\u2226",
@@ -2561,7 +2560,9 @@ HTMLdecode <- function(x, named = TRUE, hex = TRUE, decimal = TRUE) {
   "&Zscr;","\uD835\uDCB5",
   "&zscr;","\uD835\uDCCF",
   "&zwj;","\u200D",
-  "&zwnj;","\u200C")
+  "&zwnj;","\u200C",
+  "&not", "\u00AC"
+)
 
 Encoding(.html_entities) <- "UTF-8"
 ## Encoding(.html_entities) <- "bytes"

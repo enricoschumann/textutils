@@ -1,4 +1,7 @@
-v0.2-1  (2020-??-??; not yet released)
+v0.2-1  (2021-??-??; not yet released)
+
+  o fix handling of "&not" in  'HTMLdecode' (thanks to
+    Fangzhou Xie for reporting the error)
 
   o ....
 
