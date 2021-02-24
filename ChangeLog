@@ -3,7 +3,7 @@
         * R/functions.R (HTMLdecode): change order of
         named references so that "&not" (without ;) is
         matched last. See bug report by Fangzhou Xie at
-	https://github.com/enricoschumann/textutils/issues/3
+        https://github.com/enricoschumann/textutils/issues/3
 
 2020-08-24  Enrico Schumann  <es@enricoschumann.net>
 
