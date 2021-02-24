@@ -54,7 +54,7 @@ dctable(x, unitlength = "1 cm", width = 5,
 }
 \seealso{
 
-  \code{\link{toLatex}}, \code{\link[NMOF]{qTable}}, \code{\link{TeXunits}}
+  \code{\link{toLatex}}, \code{\link{TeXunits}}
 
 }
 \examples{

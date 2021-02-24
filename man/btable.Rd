@@ -46,7 +46,7 @@ btable(x, unit = "cm", before = "", after = "", raise = "0.2ex",
 }
 \seealso{
 
-  \code{\link{toLatex}}, \code{\link[NMOF]{qTable}}, \code{\link{TeXunits}}
+  \code{\link{toLatex}}, \code{\link{TeXunits}}
 
 }
 \examples{
