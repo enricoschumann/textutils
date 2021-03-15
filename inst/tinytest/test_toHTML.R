@@ -57,3 +57,34 @@ s <- toHTML(data.frame(a = 1, b = 4))
 expect_equal(s,
              c("<tr><th>a</th><th>b</th></tr>",
                "<tr><td>1</td><td>4</td></tr>"))
+
+
+
+## ---------------------------------------------------
+## single row data.frame
+## ---------------------------------------------------
+
+s <- toHTML(data.frame(a = 1, b = 4))
+expect_equal(s,
+             c("<tr><th>a</th><th>b</th></tr>",
+               "<tr><td>1</td><td>4</td></tr>"))
+
+s <- toHTML(data.frame(a = 1, b = 4), row.names = TRUE)
+expect_equal(s,
+             c("<tr><th></th><th>a</th><th>b</th></tr>",
+               "<tr><td>1</td><td>1</td><td>4</td></tr>"))
+
+s <- toHTML(data.frame(a = 1, b = 4), row.names = "test")
+expect_equal(s,
+             c("<tr><th>test</th><th>a</th><th>b</th></tr>",
+               "<tr><td>1</td><td>1</td><td>4</td></tr>"))
+
+s <- toHTML(data.frame(a = 1, b = 4), col.names = FALSE)
+expect_equal(s,
+             c("<tr><td>1</td><td>4</td></tr>"))
+
+s <- toHTML(data.frame(a = 1, b = 4),
+            col.names = FALSE,
+            row.names = TRUE)
+expect_equal(s,
+             c("<tr><td>1</td><td>1</td><td>4</td></tr>"))
