@@ -1,3 +1,8 @@
+2021-03-26  Enrico Schumann  <es@enricoschumann.net>
+
+	* R/functions.R (toText.data.frame): add method
+	for data frames
+
 2021-02-16  Enrico Schumann  <es@enricoschumann.net>
 
         * R/functions.R (HTMLdecode): change order of

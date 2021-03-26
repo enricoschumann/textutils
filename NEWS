@@ -12,6 +12,8 @@ v0.2-1  (2021-04-01; not yet released)
     logical (as before) or a string, which is then used
     as column name.
 
+  o 'toText' gains a method for data frames
+
 v0.2-0  (2019-12-30)
 
   o fix 'here': argument 'trim' was ignored for

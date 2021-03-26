@@ -10,6 +10,11 @@ toText.default <- function(x, ...) {
     ans
 }
 
+toText.data.frame <- function(x, ...) {
+    ans <- capture.output(print(x, ...))
+    class(ans) <- "text"
+    ans
+}
 
 print.text <- function(x, ...)
     cat(x, sep = "\n", ...)

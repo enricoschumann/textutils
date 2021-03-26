@@ -23,6 +23,7 @@ S3method(toHTML, data.frame)
 S3method(toHTML, text)
 S3method(toLatex, data.frame)
 S3method(toText, default)
+S3method(toText, data.frame)
 
 importFrom("utils",
            "capture.output",
