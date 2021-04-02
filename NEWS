@@ -1,11 +1,11 @@
-v0.2-1  (2021-04-01; not yet released)
+v0.2-1  (2021-04-01)
 
   o fix handling of "&not" in  'HTMLdecode' (thanks to
     Fangzhou Xie for reporting the error)
 
   o toHTML.data.frame: fix handling of single-row
     dataframes
-    
+
   o toHTML.data.frame: new argument 'col.names', with
     default TRUE. If FALSE, column names of data frame
     are ignored. Also, 'row.names' may now be either
