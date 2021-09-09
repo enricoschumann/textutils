@@ -56,4 +56,5 @@ expect_equal(HTMLdecode("I'm &notit; I tell you"),
 expect_equal(HTMLdecode("I'm &notin; I tell you"),
              "I'm \u2209 I tell you")
 
-
+expect_equal(HTMLdecode("&not;in X"), "\u00ACin X")
+expect_equal(HTMLdecode("&notin; X"), "\u2209 X")

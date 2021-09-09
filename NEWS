@@ -1,3 +1,17 @@
+v0.2-2  (2021-??-??; not yet released)
+
+  o "legacy" named character references without a
+    trailing semicolon, such as &not or &LT, are now
+    properly handled, for instance
+        HTMLdecode("&parallel is good")   ## "¶llel is good"
+        HTMLdecode("&parallel; is good")
+
+    All references listed at
+        https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references
+    are supported.
+
+  o ....
+
 v0.2-1  (2021-04-01)
 
   o fix handling of "&not" in  'HTMLdecode' (thanks to

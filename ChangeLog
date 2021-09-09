@@ -1,3 +1,15 @@
+2021-09-09  Enrico Schumann  <es@enricoschumann.net>
+
+        * Scripts/html5-references.R: Named references
+        are now directly computed from
+        https://html.spec.whatwg.org/entities.json ;
+        which will allow easy update/checking in case
+        of standard changes.  References are stored in
+        file R/char_refs.R .
+
+        * DESCRIPTION (Collate): have 'char_refs.R'
+        processed first
+
 2021-04-01  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.2-1
