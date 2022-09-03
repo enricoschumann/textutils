@@ -1,4 +1,4 @@
-v0.2-2  (2021-??-??; not yet released)
+v0.2-2  (2022-09-03)
 
   o "legacy" named character references without a
     trailing semicolon, such as &not or &LT, are now
@@ -9,8 +9,6 @@ v0.2-2  (2021-??-??; not yet released)
     All references listed at
         https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references
     are supported.
-
-  o ....
 
 v0.2-1  (2021-04-01)
 
