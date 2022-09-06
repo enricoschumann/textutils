@@ -1,3 +1,8 @@
+v0.3-0  (2022-09-06)
+
+  o new function "insert", for inserting elements
+    into a vector
+
 v0.2-2  (2022-09-03)
 
   o "legacy" named character references without a

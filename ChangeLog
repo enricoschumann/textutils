@@ -1,3 +1,9 @@
+2022-09-06  Enrico Schumann  <es@enricoschumann.net>
+
+        * DESCRIPTION (Version): 0.3-0
+
+        * R/functions.R (insert): add function
+
 2022-09-03  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.2-2

@@ -8,6 +8,7 @@ export(
     dctable,
     fill_in,
     here,
+    insert,
     latexrule,
     rmrp,
     spaces,

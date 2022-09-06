@@ -402,3 +402,21 @@ here <- function(s, drop = TRUE, guess.type = TRUE,
     }
     ans
 }
+
+insert <- function(x, values, before.index) {
+    if (!length(values) || !length(before.index))
+        return(x)
+    if (is.unsorted(before.index)) {
+        ii <- order(before.index)
+        values <- values[ii]
+        before.index <- before.index[ii]
+    }
+    if (length(values) < length(before.index))
+        values <- rep(values, length(before.index)/length(values))
+    before.index <- before.index +
+        seq(from = 0, to = length(values) - 1)
+    ans <- vector(class(x), length(x) + length(values))
+    ans[ before.index] <- values
+    ans[-before.index] <- x
+    ans
+}
