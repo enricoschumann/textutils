@@ -1,3 +1,9 @@
+v0.3-1  (2022-10-24)
+
+  o "HTMLencode" now translates non-breaking spaces into
+    "&nbsp;".  Before, it used "&NonBreakingSpace;", which
+    is valid but (apparently) less supported.
+
 v0.3-0  (2022-09-06)
 
   o new function "insert", for inserting elements

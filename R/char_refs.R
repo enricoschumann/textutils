@@ -327,7 +327,6 @@
   "&NewLine;","\u000A",
   "&Nfr;","\uD835\uDD11",
   "&NoBreak;","\u2060",
-  "&NonBreakingSpace;","\u00A0",
   "&Nopf;","\u2115",
   "&Not;","\u2AEC",
   "&NotCongruent;","\u2262",
@@ -2229,5 +2228,6 @@
   "&lt","\u003C",
   "&not","\u00AC",
   "&para","\u00B6",
-  "&times","\u00D7"
+  "&times","\u00D7",
+  "&NonBreakingSpace;","\u00A0"
 )

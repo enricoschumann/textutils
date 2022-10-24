@@ -1,3 +1,11 @@
+2022-10-24  Enrico Schumann  <es@enricoschumann.net>
+
+        * DESCRIPTION (Version): 0.3-1
+
+        * R/char_refs.R: move "&NonBreakingSpace;" behind
+        "&nbsp;" and "nbsp&", since the latter seem
+        more-widely supported
+
 2022-09-06  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.3-0

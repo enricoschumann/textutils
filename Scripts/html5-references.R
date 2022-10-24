@@ -65,6 +65,8 @@ eval(parse(text = txt))
 ## add final ","
 txt[length(txt) - 1] <- paste0(txt[length(txt) - 1], ",")
 
+
+## find entities without final ";"
 for (i in seq(3, length(.html_entities), by = 2)) {
     if (endsWith(.html_entities[i], ";")  &&
         substr(.html_entities[i], 1, nchar(.html_entities[i])-1) ==
@@ -73,6 +75,17 @@ for (i in seq(3, length(.html_entities), by = 2)) {
         txt[(i+1)/2 - 1:0 + 1] <- txt[(i+1)/2 - 0:1 + 1]
         }
 }
+
+##
+
+i <- grep("NonBreakingSpace", txt)
+txt <- txt[
+    c( 1     :(i - 1),
+      (i + 1):(length(txt) - 1),
+       i,
+       length(txt))
+]
+
 
 ## remove final ","
 txt[length(txt)-1] <- substr(txt[length(txt)-1], 1, nchar(txt[length(txt)-1])-1)
