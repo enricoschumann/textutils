@@ -45,24 +45,24 @@ here(s, drop = TRUE, guess.type = TRUE, sep = NULL, header = TRUE,
   \code{data.frame}.
 
   If \code{sep} is not specified, \code{here} calls
-  \code{\link[utils]{type.convert}} on the input \code{s}. 
+  \code{\link[utils]{type.convert}} on the input \code{s}.
 
   If \code{sep} is specified, the input \code{s} is fed to
   \code{\link[utils]{read.table}}. Additional arguments may be passed
   through \dots.
-  
+
 }
 \value{
   a vector or, if \code{sep} is specified, a \code{\link{data.frame}}
 }
 \references{
 
-  \url{http://rosettacode.org/wiki/Here_document}
+  \url{https://rosettacode.org/wiki/Here_document}
 
   (note that \R supports multi-line strings, so in a way it has
   built-in support for here documents as defined on
   that website)
-  
+
 }
 \author{
   Enrico Schumann
