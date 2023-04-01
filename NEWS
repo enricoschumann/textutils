@@ -1,3 +1,10 @@
+v0.3-2  (2023-04-01)
+
+  o minor documentation updates
+
+  o there is an additionat git repository at
+    https://git.sr.ht/~enricoschumann/textutils
+
 v0.3-1  (2022-10-24)
 
   o "HTMLencode" now translates non-breaking spaces into

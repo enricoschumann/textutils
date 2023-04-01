@@ -5,7 +5,7 @@
 }
 \description{
 
-  Light-weight template filling: replace 
+  Light-weight template filling: replace
   placeholders in a string by values.
 
 }
@@ -13,16 +13,19 @@
 fill_in(s, ..., delim = c("{", "}"), replace.NA = TRUE)
 }
 \arguments{
-  \item{s}{
+  \item{s}{%
     character
   }
-  \item{\dots}{
+
+  \item{\dots}{%
     typically name/value pairs. See Examples.
   }
-  \item{delim}{
+
+  \item{delim}{%
     characters
   }
-  \item{replace.NA}{
+
+  \item{replace.NA}{%
     logical: if TRUE, \code{\link{NA}} values are replaced by
     the string \code{"NA"}.
     May also be a string. See Examples.
