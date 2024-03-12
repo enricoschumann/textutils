@@ -99,6 +99,11 @@ toLatex.data.frame <- function(object,
         if (cl[j] %in% names(class.handlers))
             object[[j]] <- class.handlers[[ cl[j] ]](object[[j]])
     }
+    if (!isFALSE(row.names)) {
+        nm <- if (is.character(row.names)) row.names else "row.names"
+        object <- cbind(row.names(object), object)
+        colnames(object)[1L] <- nm
+    }
     paste(do.call(function(...) paste(..., sep = " & "), object), eol)
 }
 
@@ -437,3 +442,15 @@ insert <- function(x, values, before.index) {
 ## work as well and would also handle 000.
 .ASCII.control.rx <- "\001|\002|\003|\004|\005|\006|\a|\b|\v|\f|\016|\017|\020|\021|\022|\023|\024|\025|\026|\027|\030|\031|\032|\033|\034|\035|\036|\037|\0177"
 
+
+
+HTMLrm <- function(x, ..., ignore.case = TRUE) {
+
+    x <- gsub("<style>.*?</style>", "", x, perl = TRUE, ignore.case = TRUE)
+    x <- gsub("<head>.*?</head>", "", x, perl = TRUE, ignore.case = TRUE)
+    x <- gsub("<head>.*?</head>", "", x, perl = TRUE, ignore.case = TRUE)
+    x <- gsub("<!--.*?-->", "", x, perl = TRUE, ignore.case = TRUE)
+    x <- HTMLdecode(x)
+    x <- gsub("<[/]?[^>]+>", "", x, perl = TRUE, ignore.case = TRUE)
+    x
+}

@@ -2,6 +2,7 @@
 export(
     HTMLdecode,
     HTMLencode,
+    HTMLrm,
     TeXencode,
     TeXunits,
     btable,
@@ -28,6 +29,6 @@ S3method(toText, data.frame)
 
 importFrom("utils",
            "capture.output",
-           "read.table", 
+           "read.table",
            "toLatex",
            "type.convert")

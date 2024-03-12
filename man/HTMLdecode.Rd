@@ -1,6 +1,7 @@
 \name{HTMLencode}
 \alias{HTMLdecode}
 \alias{HTMLencode}
+\alias{HTMLrm}
 \title{
   Decode and Encode HTML Entities
 }
@@ -10,11 +11,12 @@
 \usage{
 HTMLdecode(x, named = TRUE, hex = TRUE, decimal = TRUE)
 HTMLencode(x, use.iconv = FALSE, encode.only = NULL)
+HTMLrm(x, \dots)
 }
 \arguments{
-
   \item{x}{
-    a string (character vector of length one)
+    \code{HTMLdecode}, \code{HTMLencode}: a character vector of length one;
+    for \code{HTMLrm}: a character vector
   }
   \item{use.iconv}{
 
@@ -34,26 +36,34 @@ HTMLencode(x, use.iconv = FALSE, encode.only = NULL)
   \item{encode.only}{
     character
   }
+  \item{\dots}{
+    other arguments
+  }
 
 }
 \details{
 
-  \code{HTMLdecode} replaces named, hexadecimal and
-  decimal character references as defined by
-  \acronym{HTML}5 (see References) with characters. The
-  resulting character vector is marked as
-  \acronym{UTF}-8 (see \code{\link{Encoding}}).
+  \code{HTMLdecode} replaces named, hexadecimal and decimal
+  character references as defined by \acronym{HTML}5 (see
+  References) with characters. The resulting character vector
+  is marked as \acronym{UTF}-8 (see \code{\link{Encoding}}).
 
   \code{HTMLencode} replaces \acronym{UTF}-8-encoded
-  substrings with \acronym{HTML}5 named entities
-  (a.k.a.  \dQuote{named character references}).  A
-  semicolon \sQuote{\code{;}} will not be replaced by
-  the entity \sQuote{\code{&semi;}}.  Other than that,
-  however, \code{HTMLencode} is quite thorough in its
-  job: it will replace all characters for which named
-  entities exists, even \sQuote{\code{&comma;}} and or
-  \sQuote{\code{&quest;}}.  You can restrict the
-  characters to be replaced by specifying \code{encode.only}.
+  substrings with \acronym{HTML}5 named entities (a.k.a.
+  \dQuote{named character references}).  A semicolon
+  \sQuote{\code{;}} will not be replaced by the entity
+  \sQuote{\code{&semi;}}.  Other than that, however,
+  \code{HTMLencode} is quite thorough in its job: it will
+  replace all characters for which named entities exists, even
+  \sQuote{\code{&comma;}} and or \sQuote{\code{&quest;}}.  You
+  can restrict the characters to be replaced by specifying
+  \code{encode.only}.
+
+  \code{HTMLrm} removes \acronym{HTML} tags.  Content between
+  \code{style} and \code{head} is removed, as are comments.
+  Note that each element of \code{x} is considered a single
+  \acronym{HTML} document; so for multiline documents,
+  paste/collapse the document. See Examples.
 
 }
 \value{
