@@ -1,3 +1,10 @@
+v0.4-0  (2024-04-01; not yet released)
+
+  o toHTML gains an argument "td.id"; if TRUE, td-elements
+    get id attributes
+
+  o ....
+
 v0.3-2  (2023-04-01)
 
   o minor documentation updates

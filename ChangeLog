@@ -1,3 +1,8 @@
+2023-07-27  Enrico Schumann  <es@enricoschumann.net>
+
+        * R/functions.R (toHTML.data.frame): add
+        argument 'td.id', with default FALSE
+
 2023-04-01  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.3-2

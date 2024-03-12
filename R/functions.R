@@ -39,7 +39,8 @@ toHTML.data.frame <- function(x, ...,
                               row.names = FALSE,
                               col.names = TRUE,
                               class.handlers = list(),
-                              col.handlers = list()) {
+                              col.handlers = list(),
+                              td.id = FALSE) {
 
     row.names.header <- ""
     if (is.character(row.names)) {
@@ -60,9 +61,17 @@ toHTML.data.frame <- function(x, ...,
             x[[j]] <- class.handlers[[ cl[j] ]](x[[j]])
     }
     header.row <- c(if (row.names) row.names.header, colnames(x))
-    m <- apply(x, 2, function(x) as.matrix(paste0("<td>", x, "</td>")))
-    if (dim(x)[[1]] == 1L)
-        dim(m) <- dim(x)
+    if (isFALSE(td.id)) {
+        m <- apply(x, 2, function(x) as.matrix(paste0("<td>", x, "</td>")))
+        if (dim(x)[[1]] == 1L)
+            dim(m) <- dim(x)
+    } else if (isTRUE(td.id)) {
+        m <- array("", dim = dim(x))
+        for (j in seq_len(ncol(x)))
+            m[, j] <- paste0("<td id='td_", seq_len(nrow(x)), "_", j, "'>",
+                             x[, j],
+                             "</td>")
+    }
     ans <- rbind(if (col.names) paste0("<th>", header.row, "</th>"),
                  cbind(if (row.names) paste0("<td>", row.names(x), "</td>"), m))
 

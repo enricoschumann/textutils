@@ -88,3 +88,10 @@ s <- toHTML(data.frame(a = 1, b = 4),
             row.names = TRUE)
 expect_equal(s,
              c("<tr><td>1</td><td>1</td><td>4</td></tr>"))
+
+
+s <- toHTML(data.frame(a = 1:2, b = 4:5),
+            col.names = FALSE,
+            row.names = TRUE,
+            td.id = TRUE)
+
