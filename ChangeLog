@@ -1,3 +1,9 @@
+2024-01-31  Enrico Schumann  <es@enricoschumann.net>
+
+        * R/functions.R (.ASCII.control.rx): add but do not
+        export regex for non-printable control characters
+        in ASCII
+
 2023-07-27  Enrico Schumann  <es@enricoschumann.net>
 
         * R/functions.R (toHTML.data.frame): add

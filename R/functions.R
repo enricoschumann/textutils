@@ -429,3 +429,11 @@ insert <- function(x, values, before.index) {
     ans[-before.index] <- x
     ans
 }
+
+
+## Non-printable ASCII control characters, i.e. those up to
+## octal 37 except \x09 (\t), \x0A (\n), \x0D (\r).
+## Without the exceptions, character class [:cntrl:] would
+## work as well and would also handle 000.
+.ASCII.control.rx <- "\001|\002|\003|\004|\005|\006|\a|\b|\v|\f|\016|\017|\020|\021|\022|\023|\024|\025|\026|\027|\030|\031|\032|\033|\034|\035|\036|\037|\0177"
+
