@@ -1,9 +1,9 @@
 v0.4-0  (2024-04-01; not yet released)
 
-  o new function HTMLrm, which removes HTML tags
+  o new function "HTMLrm", which removes HTML tags
 
-  o toHTML gains an argument "td.id"; if TRUE, td-elements
-    get id attributes
+  o "toHTML" gains an argument "td.id"; if TRUE,
+    "td"-elements get id attributes
 
   o ....
 

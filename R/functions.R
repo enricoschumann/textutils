@@ -446,11 +446,17 @@ insert <- function(x, values, before.index) {
 
 HTMLrm <- function(x, ..., ignore.case = TRUE) {
 
-    x <- gsub("<style>.*?</style>", "", x, perl = TRUE, ignore.case = TRUE)
-    x <- gsub("<head>.*?</head>", "", x, perl = TRUE, ignore.case = TRUE)
-    x <- gsub("<head>.*?</head>", "", x, perl = TRUE, ignore.case = TRUE)
-    x <- gsub("<!--.*?-->", "", x, perl = TRUE, ignore.case = TRUE)
+    x <- gsub("<style>.*?</style>", "", x, perl = TRUE, ignore.case = ignore.case)
+    x <- gsub("<head>.*?</head>", "", x, perl = TRUE, ignore.case = ignore.case)
+    x <- gsub("<style>.*?</style>", "", x, perl = TRUE, ignore.case = ignore.case)
+    x <- gsub("<script>.*?</script>", "", x, perl = TRUE, ignore.case = ignore.case)
+    x <- gsub("<!--.*?-->", "", x, perl = TRUE, ignore.case = ignore.case)
     x <- HTMLdecode(x)
-    x <- gsub("<[/]?[^>]+>", "", x, perl = TRUE, ignore.case = TRUE)
+
+
+    x <- gsub("<a [^>]*?href *= *['\"](.*?)['\"][^>]*>.*?</a>", "\\1", x)
+
+    ## remove leftover <>
+    x <- gsub("<[/]?[^>]+>", "", x, perl = TRUE, ignore.case = ignore.case)
     x
 }

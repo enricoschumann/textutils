@@ -1,3 +1,10 @@
+2024-03-18  Enrico Schumann  <es@enricoschumann.net>
+
+        * R/functions.R (HTMLrm): remove <style> and
+        <script> content
+
+        * inst/tinytest/test_HTMLrm.R: add tests
+
 2024-03-12  Enrico Schumann  <es@enricoschumann.net>
 
         * R/functions.R (HTMLrm): add function, which removes
