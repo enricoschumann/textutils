@@ -39,7 +39,7 @@ dctable(x, unitlength = "1 cm", width = 5,
   Creates a dotchart table.
 
   This function is currently very experimental.
-  
+
 }
 \value{
   character

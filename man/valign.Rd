@@ -3,11 +3,11 @@
 \title{
   Vertically Align Strings
 }
-\description{  
+\description{
   Vertically align character vectors.
 }
 \usage{
-valign(s, align = "|", insert.at = "<>", replace = TRUE, fixed = TRUE) 
+valign(s, align = "|", insert.at = "<>", replace = TRUE, fixed = TRUE)
 }
 \arguments{
   \item{s}{a character vector}
@@ -17,11 +17,11 @@ valign(s, align = "|", insert.at = "<>", replace = TRUE, fixed = TRUE)
   \item{fixed}{logical}
 }
 \details{
-  
+
   The function expands the elements of a character vector in such a way
   that the elements are vertically aligned, which can be handy when
   generating reports. See Examples.
-  
+
 }
 \value{
   a character vector

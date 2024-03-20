@@ -15,7 +15,7 @@
 
   For more information and a complete list of functions, use
       \sQuote{\code{library(help = "textutils")}}.
-  
+
 }
 \author{
 

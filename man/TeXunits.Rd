@@ -30,7 +30,7 @@ TeXunits(from, to, from.unit = NULL)
   Available units are centimetre (\code{cm}), inch (\code{in}), point
   (\code{pt}), pica (\code{pc}), big point(\code{bp}), millimetre
   (\code{mm}), Didot points (\code{dd}) and Cicero (\code{cc}).
-  
+
   See Chapter 10 of the TeXbook for details.
 
 }
@@ -40,13 +40,13 @@ TeXunits(from, to, from.unit = NULL)
 \references{
 
   Donald E. Knuth. \emph{The TeXbook.}  Addison Wesley, 1986 (with
-  corrections made in 1996).  
+  corrections made in 1996).
 }
 \author{
   Enrico Schumann
 }
 %% \seealso{
-  
+
 %% }
 \examples{
 TeXunits("1in",

@@ -3,7 +3,7 @@
 \title{
   Remove Repeated Pattern
 }
-\description{  
+\description{
   Remove a repeated pattern in a character vector.
 }
 \usage{
@@ -18,7 +18,7 @@ rmrp(s, pattern, \dots)
 
   \code{rmrp} removes a repeated pattern in a character vector (e.g.
   repeated blank lines).
-  
+
 }
 \value{
   a character vector

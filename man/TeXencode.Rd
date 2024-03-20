@@ -19,7 +19,7 @@ TeXencode(s)
 \details{
 
   Probably incomplet
-  
+
 }
 \value{
   numeric
@@ -27,7 +27,7 @@ TeXencode(s)
 \references{
 
   Donald E. Knuth. \emph{The TeXbook.}
-  Addison Wesley, 1986 (with corrections made in 1996).  
+  Addison Wesley, 1986 (with corrections made in 1996).
 
   Leslie Lamport. \emph{LaTeX: A Document Preparation System.}
   Addison Wesley, 1994.
@@ -37,7 +37,7 @@ TeXencode(s)
   Enrico Schumann
 }
 %% \seealso{
-  
+
 %% }
 \examples{
 TeXencode("Peter & Paul")

@@ -5,7 +5,7 @@
 \usepackage{libertine}
 \usepackage[scaled=0.8]{DejaVuSansMono}
 \usepackage[T1]{fontenc}
-\renewcommand*\familydefault{\sfdefault} 
+\renewcommand*\familydefault{\sfdefault}
 \usepackage{amsmath,amstext}
 \usepackage{hyperref}
 \usepackage{natbib}
@@ -48,7 +48,7 @@ example, add this to a Sweave file:
  <<echo=false, results=tex>>=
  x <- 1:5
  cat(btable(x, before = paste(x, "&"), after= "\\\\\n"))
- @ 
+ @
  \end{tabular}
 \end{verbatim}
 
@@ -58,7 +58,7 @@ example, add this to a Sweave file:
 <<echo=false, results=tex>>=
 x <- 1:5
 cat(btable(x, before = paste(1:5, "&"), after= "\\\\\n"))
-@ 
+@
 \end{tabular}
 
 
@@ -66,12 +66,12 @@ cat(btable(x, before = paste(1:5, "&"), after= "\\\\\n"))
 
 <<>>=
 x <- array(1:6, dim = c(3, 2))
-@ 
+@
 
 \begin{tabular}{ll}
 <<echo=false, results=tex>>=
 cat(paste(dctable(x, circle.size = 1), "\\\\\n"))
-@ 
+@
 
 \end{tabular}
 
@@ -83,5 +83,5 @@ cat(paste(dctable(x, circle.size = 1), "\\\\\n"))
 
 <<results=tex>>=
 toLatex(sessionInfo())
-@ 
+@
 \end{document}
