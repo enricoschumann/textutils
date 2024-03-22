@@ -40,6 +40,7 @@ toHTML.data.frame <- function(x, ...,
                               col.names = TRUE,
                               class.handlers = list(),
                               col.handlers = list(),
+                              replace.NA = NULL,
                               td.id = FALSE) {
 
     row.names.header <- ""
@@ -48,6 +49,8 @@ toHTML.data.frame <- function(x, ...,
         row.names <- TRUE
     }
     dfnames <- names(x)
+    isna <- is.na(x)
+
     if (any(i <- names(col.handlers) %in% dfnames)) {
         elt <- which(i)
         for (e in elt)
@@ -59,7 +62,11 @@ toHTML.data.frame <- function(x, ...,
             next
         if (cl[j] %in% names(class.handlers))
             x[[j]] <- class.handlers[[ cl[j] ]](x[[j]])
+
+        if (!is.null(replace.NA))
+            x[[j]][isna[, j]] <- replace.NA
     }
+
     header.row <- c(if (row.names) row.names.header, colnames(x))
     if (isFALSE(td.id)) {
         m <- apply(x, 2, function(x) as.matrix(paste0("<td>", x, "</td>")))

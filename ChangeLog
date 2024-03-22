@@ -1,3 +1,9 @@
+2024-03-22  Enrico Schumann  <es@enricoschumann.net>
+
+        * R/functions.R (toHTML.data.frame): add argument
+        "replace.NA", for automatically replacing NAs;
+        NAs are noted /before/ any handlers are called
+
 2024-03-18  Enrico Schumann  <es@enricoschumann.net>
 
         * R/functions.R (HTMLrm): remove <style> and

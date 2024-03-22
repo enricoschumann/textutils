@@ -15,6 +15,7 @@ toHTML(x, ...)
                             col.names = TRUE,
                             class.handlers = list(),
                             col.handlers = list(),
+                            replace.NA = NULL,
                             td.id = FALSE)
 }
 \arguments{
@@ -36,6 +37,11 @@ toHTML(x, ...)
   \item{col.handlers}{
     a list of named functions
   }
+  \item{replace.NA}{%
+    \code{NULL} (do nothing), or a string that replaces
+    all NA values.  NA values are noted \emph{before}
+    any handlers are called.
+  }
   \item{td.id}{
     logical
   }
@@ -43,8 +49,8 @@ toHTML(x, ...)
 \details{
 
   There exists \code{toHTML} methods in several packages,
-  e.g. in \pkg{tools} or \pkg{XML}. Package \pkg{R2HTML} has a
-  \code{HTML} generic.
+  e.g. in \pkg{tools} or \pkg{XML}. Package \pkg{R2HTML} has
+  a \code{HTML} generic.
 
   The \sQuote{semantics} of this function may differ from
   other implementations: the function is expected to take an

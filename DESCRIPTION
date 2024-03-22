@@ -2,7 +2,7 @@ Package: textutils
 Type: Package
 Title: Utilities for Handling Strings and Text
 Version: 0.4-0
-Date: 2024-03-18
+Date: 2024-03-22
 Imports: utils
 Suggests: tinytest
 Maintainer: Enrico Schumann <es@enricoschumann.net>
