@@ -59,11 +59,11 @@ HTMLrm(x, \dots)
   can restrict the characters to be replaced by specifying
   \code{encode.only}.
 
-  \code{HTMLrm} removes \acronym{HTML} tags.  Content between
-  \code{style} and \code{head} is removed, as are comments.
-  Note that each element of \code{x} is considered a single
-  \acronym{HTML} document; so for multiline documents,
-  paste/collapse the document. See Examples.
+  \code{HTMLrm} removes \acronym{HTML} tags.  All content
+  between \code{style} and \code{head} tags is removed, as are
+  comments.  Note that each element of \code{x} is considered
+  a single \acronym{HTML} document; so for multiline
+  documents, paste/collapse the document.
 
 }
 \value{
@@ -91,4 +91,8 @@ HTMLencode("Max, Moritz & more")
 ## [1] "Max&comma; Moritz &amp; more"
 HTMLencode("Max, Moritz & more", encode.only = c("&", "<", ">"))
 ## [1] "Max, Moritz &amp; more"
+
+
+HTMLrm("before <a href='http://enricoschumann.net'>LINK</a>  after")
+## [1] "before http://enricoschumann.net  after"
 }

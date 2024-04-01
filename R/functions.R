@@ -451,8 +451,9 @@ insert <- function(x, values, before.index) {
 
 
 
-HTMLrm <- function(x, ..., ignore.case = TRUE) {
+HTMLrm <- function(x, ...) {
 
+    ignore.case = TRUE
     x <- gsub("<style>.*?</style>", "", x, perl = TRUE, ignore.case = ignore.case)
     x <- gsub("<head>.*?</head>", "", x, perl = TRUE, ignore.case = ignore.case)
     x <- gsub("<style>.*?</style>", "", x, perl = TRUE, ignore.case = ignore.case)

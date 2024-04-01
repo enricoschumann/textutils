@@ -1,4 +1,4 @@
-v0.4-0  (2024-04-01; not yet released)
+v0.4-0  (2024-04-01)
 
   o new function "HTMLrm", which removes HTML tags
 
@@ -7,8 +7,6 @@ v0.4-0  (2024-04-01; not yet released)
 
   o the data-frame method of "toHTML" gains an argument
     "replace.NA", for automatically replacing NAs
-
-  o ....
 
 v0.3-2  (2023-04-01)
 
