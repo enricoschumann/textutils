@@ -26,6 +26,7 @@ S3method(toHTML, default)
 S3method(toHTML, data.frame)
 S3method(toHTML, text)
 
+S3method(toText, character)
 S3method(toText, default)
 S3method(toText, data.frame)
 

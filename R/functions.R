@@ -10,6 +10,16 @@ toText.default <- function(x, ...) {
     ans
 }
 
+toText.character <- function(x, ..., sep = ":") {
+    if (is.atomic(x) && !is.null(names(x))) {
+        ans <- paste0(names(x), sep, x)
+        class(ans) <- "text"
+        ans
+    } else {
+        NextMethod()
+    }
+}
+
 toText.data.frame <- function(x, ...) {
     ans <- capture.output(print(x, ...))
     class(ans) <- "text"

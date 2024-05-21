@@ -1,3 +1,8 @@
+2024-05-21  Enrico Schumann  <es@enricoschumann.net>
+
+        * R/functions.R (toText.character): add method,
+        which handles named atomic character vectors
+
 2024-04-01  Enrico Schumann  <es@enricoschumann.net>
 
         * DESCRIPTION (Version): 0.4-1
