@@ -1,3 +1,10 @@
+2024-05-24  Enrico Schumann  <es@enricoschumann.net>
+
+        * R/functions.R (HTMLrm): add argument 'tag.replace',
+        which is used when replacing tags like '<something>'
+        and '</something>'; default is "", which matches the
+        current behaviour.
+
 2024-05-21  Enrico Schumann  <es@enricoschumann.net>
 
         * R/functions.R (toText.character): add method,
