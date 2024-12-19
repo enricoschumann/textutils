@@ -1,3 +1,8 @@
+2024-12-19  Enrico Schumann  <es@enricoschumann.net>
+
+        * R/table.R (read_HTMLtable): add draft of function,
+        not yet exported
+
 2024-05-24  Enrico Schumann  <es@enricoschumann.net>
 
         * R/functions.R (HTMLrm): add argument 'tag.replace',
