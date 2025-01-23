@@ -25,17 +25,23 @@ toHTML(x, ...)
   \item{\dots}{
     arguments passed to methods
   }
-  \item{row.names}{
-    logical
+  \item{row.names}{%
+
+    logical (whether to include row names or not) or string
+    (the column name used for the row-names column)
+
   }
-  \item{col.names}{
-    logical
+  \item{col.names}{%
+    
+    logical (whether to include column names or not) or
+    character (specify column names)
+
   }
   \item{class.handlers}{
-    a list of named functions
+    a list of named functions. See Examples.
   }
   \item{col.handlers}{
-    a list of named functions
+    a list of named functions. See Examples.
   }
   \item{replace.NA}{%
     \code{NULL} (do nothing), or a string that replaces
