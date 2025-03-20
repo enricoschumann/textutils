@@ -18,7 +18,7 @@ Description: Utilities for handling character vectors
   and aligning strings that form the lines of such
   reports. The package also provides generic functions for
   transforming R objects to HTML and to plain text.
-Collate: char_refs.R functions.R
+Collate: char_refs.R functions.R table.R
 License: GPL-3
 URL: http://enricoschumann.net/R/packages/textutils/ ,
      https://git.sr.ht/~enricoschumann/textutils ,
