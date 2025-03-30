@@ -1,4 +1,4 @@
-v0.4-2  (2025-01-23; not yet released)
+v0.4-2  (2025-04-01; not yet released)
 
   o add a character method for "toText", which for
     named vectors pastes names and values, e.g.
@@ -9,7 +9,7 @@ v0.4-2  (2025-01-23; not yet released)
   o "HTMLrm" gains an argument "tag.replace", which is
     used when replacing tags like '<something>' and
     '</something>'; default is "", which matches the
-    current behaviour.
+    current behaviour
 
   o "toHTML" for data.frames: "col.names" may be a
     character vector, just like for "row.names"

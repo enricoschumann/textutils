@@ -11,7 +11,7 @@
 \usage{
 HTMLdecode(x, named = TRUE, hex = TRUE, decimal = TRUE)
 HTMLencode(x, use.iconv = FALSE, encode.only = NULL)
-HTMLrm(x, \dots)
+HTMLrm(x, \dots, tag.replace = "")
 }
 \arguments{
   \item{x}{
@@ -35,6 +35,9 @@ HTMLrm(x, \dots)
   }
   \item{encode.only}{
     character
+  }
+  \item{tag.replace}{
+    string: replacementt for tags
   }
   \item{\dots}{
     other arguments

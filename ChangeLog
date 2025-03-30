@@ -14,7 +14,7 @@
         * R/functions.R (HTMLrm): add argument 'tag.replace',
         which is used when replacing tags like '<something>'
         and '</something>'; default is "", which matches the
-        current behaviour.
+        current behaviour
 
 2024-05-21  Enrico Schumann  <es@enricoschumann.net>
 
