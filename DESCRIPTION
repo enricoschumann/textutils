@@ -2,7 +2,7 @@ Package: textutils
 Type: Package
 Title: Utilities for Handling Strings and Text
 Version: 0.4-2
-Date: 2025-03-30
+Date: 2025-04-01
 Imports: utils
 Suggests: tinytest
 Maintainer: Enrico Schumann <es@enricoschumann.net>
@@ -20,6 +20,6 @@ Description: Utilities for handling character vectors
   transforming R objects to HTML and to plain text.
 Collate: char_refs.R functions.R
 License: GPL-3
-URL: http://enricoschumann.net/R/packages/textutils/ ,
+URL: https://enricoschumann.net/R/packages/textutils/ ,
      https://git.sr.ht/~enricoschumann/textutils ,
      https://github.com/enricoschumann/textutils

@@ -15,11 +15,11 @@ insert(x, values, before.index)
   }
   \item{values}{
     elements to insert
-}
+  }
   \item{before.index}{
     numeric: before which positions of
     the original vector to insert the new elements
-}
+  }
 }
 \details{
 

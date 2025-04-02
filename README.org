@@ -12,14 +12,14 @@ to HTML and to plain text.
 ** Installing the package
 
    The latest build of the package is always available from
-   [[http://enricoschumann.net/R/packages/textutils/]]. A
+   [[https://enricoschumann.net/R/packages/textutils/]]. A
    stable version is available from [[https://cran.r-project.org/package=textutils][CRAN]].
 
    To install the package from within an R session, type:
 #+BEGIN_SRC R :eval never :export code
 install.packages("textutils")  ## CRAN version
 install.packages("textutils",  ## development version
-                 repos = c("http://enricoschumann.net/R",
+                 repos = c("https://enricoschumann.net/R",
                            getOption("repos")))
 #+END_SRC
 

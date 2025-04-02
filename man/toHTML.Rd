@@ -32,7 +32,7 @@ toHTML(x, ...)
 
   }
   \item{col.names}{%
-    
+
     logical (whether to include column names or not) or
     character (specify column names)
 

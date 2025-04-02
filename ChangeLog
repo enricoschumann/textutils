@@ -1,3 +1,7 @@
+2025-04-01  Enrico Schumann  <es@enricoschumann.net>
+
+        * DESCRIPTION (Version): 0.4-2
+
 2025-01-22  Enrico Schumann  <es@enricoschumann.net>
 
         * R/functions.R (toHTML.data.frame): 'col.names'

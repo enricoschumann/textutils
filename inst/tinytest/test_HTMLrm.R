@@ -1,10 +1,10 @@
-test <- "before <a href='http://enricoschumann.net'>LINK</a>  after"
+test <- "before <a href='https://enricoschumann.net'>LINK</a>  after"
 
 expect_equal(HTMLrm(test),
-             "before http://enricoschumann.net  after")
+             "before https://enricoschumann.net  after")
 
 expect_equal(HTMLrm(paste0(test, test)),
-             paste(rep("before http://enricoschumann.net  after", 2),
+             paste(rep("before https://enricoschumann.net  after", 2),
                    collapse = ""))
 
 ## ---
@@ -15,9 +15,9 @@ expect_equal(HTMLrm("before <a>LINK</a> after"),
 
 ## ---
 
-test <- "before <a target = '_blank' href='http://enricoschumann.net'>LINK</a> after"
+test <- "before <a target = '_blank' href='https://enricoschumann.net'>LINK</a> after"
 expect_equal(HTMLrm(test),
-             "before http://enricoschumann.net after")
+             "before https://enricoschumann.net after")
 
 ## --- comments
 

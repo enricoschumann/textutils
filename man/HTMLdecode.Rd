@@ -96,6 +96,6 @@ HTMLencode("Max, Moritz & more", encode.only = c("&", "<", ">"))
 ## [1] "Max, Moritz &amp; more"
 
 
-HTMLrm("before <a href='http://enricoschumann.net'>LINK</a>  after")
-## [1] "before http://enricoschumann.net  after"
+HTMLrm("before <a href='https://enricoschumann.net'>LINK</a>  after")
+## [1] "before https://enricoschumann.net  after"
 }
